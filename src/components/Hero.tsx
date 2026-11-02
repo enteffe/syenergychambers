@@ -33,10 +33,20 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConsultation }) => {
           {/* Left Column: Monumental Legal Statement (Fits Screen Area Directly) */}
           <div className="lg:col-span-7 space-y-4 sm:space-y-5 lg:space-y-6">
             
-            <div className="inline-block border-b border-[#C79C5A]/40 pb-1">
-              <span className="font-title text-[10px] sm:text-xs tracking-[0.24em] text-[#C79C5A] uppercase">
-                Chamber No. 238 • Patiala House Courts Complex
-              </span>
+            {/* Highlighted Urgent Remand Briefing Direct Hotline */}
+            <div className="inline-block">
+              <a
+                href="tel:+919034120650"
+                className="inline-flex items-center gap-2.5 px-3.5 py-1.5 bg-[#875A1E]/30 border border-[#C79C5A] hover:bg-[#875A1E]/50 text-[#FAF8F5] transition-all cursor-pointer group shadow-xs"
+              >
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="font-title text-[11px] sm:text-xs tracking-[0.16em] uppercase text-[#E5DDD0]">
+                  Urgent Remand Briefing:
+                </span>
+                <span className="font-sans font-bold text-xs sm:text-sm text-[#C79C5A] group-hover:text-white transition-colors">
+                  +91-90341-20650
+                </span>
+              </a>
             </div>
 
             <h1 className="font-display text-3xl sm:text-5xl lg:text-[44px] xl:text-[54px] font-normal tracking-tight text-[#FAF8F5] leading-[1.12] text-balance">
@@ -63,12 +73,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConsultation }) => {
               >
                 Practice Remit
               </a>
-            </div>
-
-            {/* Sub-text Citation */}
-            <div className="pt-3 sm:pt-4 border-t border-[#1F263D] flex items-center gap-2.5 text-[11px] sm:text-xs text-slate-400 font-sans">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#A3702C] shrink-0" />
-              <span>Direct Arguing Counsel — Direct Partner Engagement Throughout Trial</span>
             </div>
 
           </div>
@@ -141,6 +145,19 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConsultation }) => {
                     </span>
                   </div>
                   <span className="text-[10px] sm:text-[11px] font-bold text-[#875A1E]">24/7 Available</span>
+                </div>
+
+                {/* Highlighted Direct Arguing Counsel Notice */}
+                <div className="p-3 bg-[#111625] border-l-2 border-[#C79C5A] text-[#FAF8F5] shadow-sm mt-2.5">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#C79C5A] shrink-0" />
+                    <span className="font-title text-[10px] uppercase font-bold tracking-wider text-[#C79C5A]">
+                      Direct Arguing Counsel
+                    </span>
+                  </div>
+                  <p className="font-sans text-[11px] sm:text-xs text-[#E5DDD0] font-medium leading-relaxed">
+                    Direct Partner Engagement Throughout Trial
+                  </p>
                 </div>
 
               </div>

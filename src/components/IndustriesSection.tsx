@@ -76,21 +76,21 @@ export const IndustriesSection: React.FC = () => {
           <div className="lg:col-span-7 divide-y divide-[#E5DDD0] border-t border-b border-[#E5DDD0]">
             {sectors.map((sector) => (
               <div key={sector.code} className="py-5 sm:py-6 hover:bg-[#F4EFEB] transition-colors px-3 sm:px-4 -mx-3 sm:-mx-4">
-                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-3 mb-3">
-                  <div className="flex items-baseline gap-4">
-                    <span className="font-mono text-xs font-bold text-[#875A1E]">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4 mb-2.5">
+                  <div className="flex items-center gap-3 sm:gap-4 min-w-0">
+                    <span className="font-mono text-xs font-bold text-[#875A1E] w-16 shrink-0 whitespace-nowrap tracking-wider">
                       {sector.code}
                     </span>
-                    <h3 className="font-display text-xl sm:text-2xl font-bold text-[#111625]">
+                    <h3 className="font-display text-lg sm:text-xl lg:text-2xl font-bold text-[#111625]">
                       {sector.name}
                     </h3>
                   </div>
-                  <span className="font-sans text-[11px] font-semibold text-slate-500 uppercase tracking-wider">
+                  <span className="font-sans text-[11px] font-semibold text-slate-500 uppercase tracking-wider shrink-0 sm:text-right pl-19 sm:pl-0">
                     {sector.tribunals}
                   </span>
                 </div>
                 
-                <p className="font-reading text-sm sm:text-base text-slate-600 leading-relaxed sm:leading-loose pl-0 sm:pl-16">
+                <p className="font-reading text-sm sm:text-base text-slate-600 leading-relaxed sm:leading-loose pl-0 sm:pl-20">
                   {sector.focus}
                 </p>
               </div>

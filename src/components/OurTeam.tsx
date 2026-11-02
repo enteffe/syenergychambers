@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, MapPin, Scale, GraduationCap } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { FOUNDERS, CHANDIGARH_TEAM, HARYANA_TEAM, Lawyer } from '../data/firmData';
 
 interface OurTeamProps {
@@ -18,10 +18,6 @@ export const OurTeam: React.FC<OurTeamProps> = ({ onSelectLawyer }) => {
     : filter === 'chandigarh'
     ? CHANDIGARH_TEAM
     : HARYANA_TEAM;
-
-  // Primary Featured Counsel: Akshay Chauhan (Co-Founder & Former Special Prosecutor Assistant)
-  const featuredCounsel = FOUNDERS[0];
-  const remainingLawyers = filteredLawyers.filter(l => filter !== 'founders' || l.id !== featuredCounsel.id);
 
   return (
     <section id="team" className="bg-[#FAF8F5] py-14 sm:py-20 lg:py-24 border-b border-[#E5DDD0]">
@@ -83,75 +79,9 @@ export const OurTeam: React.FC<OurTeamProps> = ({ onSelectLawyer }) => {
           </div>
         </div>
 
-        {/* Featured Master Dossier: Akshay Chauhan (Visual Anchor with Balanced Padding) */}
-        {filter === 'all' && (
-          <div 
-            onClick={() => onSelectLawyer(featuredCounsel.id)}
-            className="mb-12 p-6 sm:p-8 xl:p-10 border border-[#E5DDD0] bg-white shadow-lg cursor-pointer hover:border-[#875A1E] transition-all group"
-          >
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-12 items-center">
-              
-              <div className="lg:col-span-4">
-                <div className="h-72 sm:h-80 lg:h-[360px] w-full overflow-hidden bg-[#111625] relative">
-                  <img
-                    src={featuredCounsel.imageUrl}
-                    alt={featuredCounsel.name}
-                    className="w-full h-full object-cover object-top filter grayscale contrast-105 group-hover:grayscale-0 transition-all duration-700"
-                    loading="lazy"
-                  />
-                  <div className="absolute top-3 left-3 bg-[#111625] text-[#C79C5A] px-2.5 py-1 text-[10px] font-title uppercase tracking-widest">
-                    Featured Trial Counsel
-                  </div>
-                </div>
-              </div>
-
-              <div className="lg:col-span-8 space-y-4 sm:space-y-5">
-                <div>
-                  <span className="font-title text-xs uppercase tracking-[0.24em] text-[#875A1E] block mb-2">
-                    {featuredCounsel.role} • {featuredCounsel.location}
-                  </span>
-                  <h3 className="font-display text-3xl sm:text-4xl lg:text-5xl font-normal text-[#111625] group-hover:text-[#875A1E] transition-colors leading-tight">
-                    {featuredCounsel.name}
-                  </h3>
-                </div>
-
-                <p className="font-reading text-base sm:text-lg text-slate-700 leading-relaxed sm:leading-loose font-normal">
-                  {featuredCounsel.bio}
-                </p>
-
-                {/* Key Mandate Badges */}
-                <div className="pt-4 border-t border-[#EFE9DF] space-y-3 font-sans text-xs text-slate-600">
-                  <span className="text-[10px] uppercase font-bold tracking-wider text-slate-500 block">
-                    Prosecution &amp; Trial Record
-                  </span>
-                  <div className="flex flex-wrap gap-2.5">
-                    <span className="bg-[#FAF8F5] border border-[#E5DDD0] px-3.5 py-1.5 text-[#111625] font-medium">
-                      Assisted Special Prosecutor / NCB &amp; ED
-                    </span>
-                    <span className="bg-[#FAF8F5] border border-[#E5DDD0] px-3.5 py-1.5 text-[#111625] font-medium">
-                      Over 100 NDPS &amp; 50 PMLA Prosecutions
-                    </span>
-                    <span className="bg-[#FAF8F5] border border-[#E5DDD0] px-3.5 py-1.5 text-[#111625] font-medium">
-                      Supreme Court &amp; High Courts
-                    </span>
-                  </div>
-                </div>
-
-                <div className="pt-3">
-                  <span className="inline-flex items-center gap-2.5 text-xs font-sans font-bold uppercase tracking-[0.18em] text-[#875A1E] group-hover:underline">
-                    <span>Inspect Full Judicial Record</span>
-                    <ArrowRight className="w-4 h-4 text-[#875A1E]" />
-                  </span>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        )}
-
         {/* Counsel Registry Table / Grid with Breathing Room */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
-          {(filter === 'all' ? remainingLawyers : filteredLawyers).map((lawyer) => (
+          {filteredLawyers.map((lawyer) => (
             <div
               key={lawyer.id}
               onClick={() => onSelectLawyer(lawyer.id)}
@@ -162,7 +92,7 @@ export const OurTeam: React.FC<OurTeamProps> = ({ onSelectLawyer }) => {
                   <img
                     src={lawyer.imageUrl}
                     alt={lawyer.name}
-                    className="w-full h-full object-cover object-top filter grayscale contrast-105 group-hover:grayscale-0 transition-all duration-700"
+                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
                     loading="lazy"
                   />
                 </div>

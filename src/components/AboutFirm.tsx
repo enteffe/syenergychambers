@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, Scale, Landmark, ShieldCheck } from 'lucide-react';
+import chamberImg from '../assets/chamber-patiala-house.jpg';
 
 export const AboutFirm: React.FC = () => {
   return (
@@ -73,9 +74,9 @@ export const AboutFirm: React.FC = () => {
             <div className="border border-[#E5DDD0] p-4 bg-white shadow-lg">
               <div className="overflow-hidden bg-[#111625] relative">
                 <img
-                  src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&q=80&w=1200"
-                  alt="Synergy Chambers Advocacy Session"
-                  className="w-full h-[320px] sm:h-[380px] lg:h-[400px] object-cover object-top filter grayscale contrast-105 hover:grayscale-0 transition-all duration-700"
+                  src={chamberImg}
+                  alt="Synergy Chambers Consultation at Patiala House Courts"
+                  className="w-full h-[320px] sm:h-[380px] lg:h-[400px] object-cover object-center transition-transform duration-500 hover:scale-[1.02]"
                   loading="lazy"
                 />
               </div>

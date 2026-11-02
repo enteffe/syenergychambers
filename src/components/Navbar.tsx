@@ -36,7 +36,7 @@ export const Navbar: React.FC<NavbarProps> = ({
       
       {/* Top Ledger Strip (Archival Gazette Style) */}
       <div className="bg-[#111625] text-[#FAF8F5] text-[11px] py-1.5 px-4 sm:px-6 lg:px-8 xl:px-12 border-b border-[#222B42]">
-        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 font-sans">
+        <div className="w-full flex flex-wrap items-center justify-between gap-3 font-sans">
           
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-2 text-slate-300">
@@ -88,37 +88,43 @@ export const Navbar: React.FC<NavbarProps> = ({
             </button>
 
             <a
-              href="#contact"
-              onClick={(e) => {
-                e.preventDefault();
-                onOpenConsultation();
-              }}
+              href="tel:+919034120650"
               className="text-[#C79C5A] hover:text-[#D4AA6A] font-semibold text-[11px] uppercase tracking-wider flex items-center gap-1.5"
             >
-              <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#C79C5A] animate-pulse" />
-              <span>Urgent Remand Briefing</span>
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              <span>Urgent Remand Briefing: +91-90341-20650</span>
             </a>
           </div>
 
         </div>
       </div>
 
-      {/* Main Folio Header */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-        <div className="flex items-center justify-between h-18 lg:h-20">
+      {/* Main Folio Header - Full Width to Screen Ends */}
+      <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
+        <div className="flex items-center justify-between h-18 lg:h-22 w-full">
           
-          {/* Monumental Wordmark */}
-          <a href="#" className="flex items-baseline gap-3 group focus:outline-none">
-            <span className="font-title text-2xl sm:text-[26px] font-bold tracking-[0.08em] text-[#111625] block leading-none">
-              SYNERGY <span className="text-[#875A1E] font-normal">CHAMBERS</span>
-            </span>
-            <span className="hidden sm:inline-block text-[10px] font-sans font-semibold uppercase tracking-[0.25em] text-[#875A1E] pl-2 border-l border-[#E5DDD0]">
-              Advocates &amp; Solicitors
-            </span>
+          {/* Monumental Wordmark (Vertically Center-Aligned as in Attachment 2) */}
+          <a href="#" className="flex items-center gap-3.5 sm:gap-4 group focus:outline-none py-1 shrink-0">
+            <div className="flex flex-col font-title tracking-[0.06em] leading-[1.05]">
+              <span className="text-xl sm:text-[23px] font-bold text-[#111625]">
+                SYNERGY
+              </span>
+              <span className="text-xl sm:text-[23px] font-bold text-[#875A1E]">
+                CHAMBERS
+              </span>
+            </div>
+
+            <div className="h-9 sm:h-10 w-px bg-[#D6CBBF] shrink-0" />
+
+            <div className="flex flex-col justify-center text-[9px] sm:text-[10px] font-sans font-semibold uppercase tracking-[0.24em] text-[#875A1E] leading-[1.25] shrink-0">
+              <span>ADVOCATES</span>
+              <span className="text-center text-[8px] sm:text-[9px] text-[#875A1E]/80 my-px">&amp;</span>
+              <span>SOLICITORS</span>
+            </div>
           </a>
 
           {/* Navigation Links (Editorial Small Caps) */}
-          <nav className="hidden lg:flex items-center gap-7 text-[13px] font-sans font-semibold uppercase tracking-[0.12em] text-[#111625]/80">
+          <nav className="hidden lg:flex items-center gap-6 xl:gap-8 text-[13px] font-sans font-semibold uppercase tracking-[0.12em] text-[#111625]/80 ml-8 xl:ml-12">
             <a href="#" className="text-[#875A1E] transition-colors">
               Index
             </a>
@@ -187,13 +193,13 @@ export const Navbar: React.FC<NavbarProps> = ({
             </a>
           </nav>
 
-          {/* Action Button: Physical Brass Aesthetic (No Neon, No Cliché Pill) */}
-          <div className="hidden lg:flex items-center gap-4">
+          {/* Action Button: Moved to End of App Bar */}
+          <div className="hidden lg:flex items-center gap-4 ml-auto">
             <button
               onClick={onOpenConsultation}
-              className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#111625] text-[#FAF8F5] border border-[#875A1E] text-xs font-sans font-bold uppercase tracking-[0.14em] hover:bg-[#875A1E] hover:text-[#FAF8F5] transition-all cursor-pointer shadow-xs active:translate-y-0.5"
+              className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#111625] text-[#FAF8F5] border border-[#875A1E] text-xs font-sans font-bold uppercase tracking-[0.14em] hover:bg-[#875A1E] hover:text-[#FAF8F5] transition-all cursor-pointer shadow-xs active:translate-y-0.5 whitespace-nowrap"
             >
-              <span>Schedule Consultation</span>
+              <span>Schedule Appointment</span>
             </button>
           </div>
 

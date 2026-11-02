@@ -64,7 +64,7 @@ export const FOUNDERS: Lawyer[] = [
       "Appellate Litigation before High Courts & Supreme Court"
     ],
     barAdmissions: ["Bar Council of Delhi", "New Delhi Bar Association"],
-    imageUrl: "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&q=80&w=800"
+    imageUrl: "https://static.wixstatic.com/media/4b0d5e_83bc1bbfc57d4ff981d483710750b582~mv2.jpeg/v1/fill/w_600,h_700,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/akshay%20.jpeg"
   },
   {
     id: "sumit-ghartan",
@@ -92,7 +92,7 @@ export const FOUNDERS: Lawyer[] = [
       "Matrimonial Remedies & Family Settlements"
     ],
     barAdmissions: ["Bar Council of Delhi", "Patiala House Courts Bar Association"],
-    imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800"
+    imageUrl: "https://static.wixstatic.com/media/4b0d5e_71c3c1cb886a44ce9d71f3b051cf159e~mv2.jpg/v1/fill/w_600,h_700,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/final_edited.jpg"
   },
   {
     id: "hitesh-nandal",
@@ -119,7 +119,7 @@ export const FOUNDERS: Lawyer[] = [
       "Economic Offences Wing (EOW) Defence"
     ],
     barAdmissions: ["Bar Council of Delhi", "Delhi High Court Bar Association"],
-    imageUrl: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=800"
+    imageUrl: "https://static.wixstatic.com/media/4b0d5e_01a9aa62ff344e0395163e71c1c4154a~mv2.jpg/v1/fill/w_600,h_700,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/hitesh%20photograph_edited.jpg"
   }
 ];
 
