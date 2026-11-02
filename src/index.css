@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11", "kern" 1, "liga" 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    color: #111625;
+    background-color: #FAF8F5;
+    overflow-x: hidden;
+    font-family: "Newsreader", "Cormorant Garamond", Georgia, serif;
+    font-size: 17px;
+    line-height: 1.68;
+  }
+
+  /* GIGW Text Size Scaling */
+  html.text-size-sm {
+    font-size: 15px;
+  }
+  html.text-size-md {
+    font-size: 17px;
+  }
+  html.text-size-lg {
+    font-size: 19px;
+  }
+
+  /* High Contrast Mode */
+  html.high-contrast {
+    filter: contrast(120%);
+  }
+  html.high-contrast body {
+    background-color: #FFFFFF !important;
+    color: #000000 !important;
+  }
+}
+
+::selection {
+  background-color: #B8863A;
+  color: #FFFFFF;
+}
+
+/* Accessible focus visible rings */
+:focus-visible {
+  outline: 2px solid #B8863A !important;
+  outline-offset: 2px !important;
+}
+
+/* Subtle, tactile scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF8F5;
+}
+::-webkit-scrollbar-thumb {
+  background: #C5B9A5;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #111625;
+}
+
+/* Skip link for keyboard accessibility */
+.skip-link {
+  position: absolute;
+  top: -9999px;
+  left: 1rem;
+  z-index: 9999;
+  padding: 0.75rem 1.25rem;
+  background: #111625;
+  color: #FAF8F5;
+  font-family: "Cinzel", serif;
+  letter-spacing: 0.1em;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-modal-in {
+  animation: slideInUp 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
