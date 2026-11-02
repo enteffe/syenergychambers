@@ -37,20 +37,20 @@ export const TeamModal: React.FC<TeamModalProps> = ({
       aria-modal="true"
     >
       <div 
-        className="bg-[#FAF8F5] border border-[#DDD4C5] w-full max-w-[760px] max-h-[88vh] flex flex-col shadow-docket animate-modal-in overflow-hidden"
+        className="bg-[#FAF8F5] border border-[#E5DDD0] w-full max-w-[760px] max-h-[90svh] flex flex-col shadow-2xl animate-modal-in overflow-hidden relative"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Header */}
-        <div className="p-6 sm:p-8 border-b border-[#DDD4C5] flex items-start justify-between bg-white shrink-0">
-          <div className="flex items-center gap-4 sm:gap-6">
+        <div className="p-5 sm:p-7 border-b border-[#E5DDD0] flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white shrink-0 relative">
+          <div className="flex items-center gap-4 sm:gap-6 pr-8 sm:pr-0">
             <img
               src={lawyer.imageUrl}
               alt={lawyer.name}
-              className="w-18 h-18 sm:w-22 sm:h-22 object-cover object-top border border-[#DDD4C5] shadow-xs shrink-0 bg-[#111625]"
+              className="w-16 h-16 sm:w-20 sm:h-20 object-cover object-top border border-[#E5DDD0] shadow-xs shrink-0 bg-[#111625]"
             />
             <div>
               <div className="flex items-center gap-2 mb-1">
-                <span className="font-title text-[11px] sm:text-xs text-[#875A1E] font-bold uppercase tracking-[1.5px] block">
+                <span className="font-title text-[10px] sm:text-xs text-[#875A1E] font-bold uppercase tracking-[1.5px] block">
                   {lawyer.role}
                 </span>
                 <span className="text-slate-400">•</span>
@@ -59,12 +59,12 @@ export const TeamModal: React.FC<TeamModalProps> = ({
                 </span>
               </div>
               
-              <h2 className="font-display text-2xl sm:text-[32px] font-normal text-[#111625] leading-tight mb-1">
+              <h2 className="font-display text-xl sm:text-2xl lg:text-[28px] font-normal text-[#111625] leading-tight mb-0.5">
                 {lawyer.name}
               </h2>
               
               {lawyer.barAdmissions && lawyer.barAdmissions.length > 0 && (
-                <p className="font-sans text-xs text-slate-600 font-medium">
+                <p className="font-sans text-[11px] sm:text-xs text-slate-600 font-medium">
                   Admitted: {lawyer.barAdmissions.join(' • ')}
                 </p>
               )}
@@ -73,7 +73,7 @@ export const TeamModal: React.FC<TeamModalProps> = ({
 
           <button
             onClick={onClose}
-            className="p-2 text-slate-400 hover:text-[#111625] transition-colors cursor-pointer"
+            className="absolute top-4 right-4 sm:static p-2 text-slate-400 hover:text-[#111625] transition-colors cursor-pointer"
             aria-label="Close modal"
           >
             <X className="w-5 h-5" />
@@ -148,23 +148,23 @@ export const TeamModal: React.FC<TeamModalProps> = ({
         </div>
 
         {/* Modal Footer */}
-        <div className="p-4 sm:p-6 border-t border-[#DDD4C5] flex items-center justify-between bg-white shrink-0 font-sans">
+        <div className="p-4 sm:p-5 border-t border-[#E5DDD0] flex flex-col-reverse sm:flex-row items-stretch sm:items-center justify-between gap-3 bg-white shrink-0 font-sans">
+          <button 
+            onClick={onClose}
+            className="w-full sm:w-auto px-5 py-2.5 bg-white border border-[#DDD4C5] hover:bg-[#FAF8F5] text-slate-700 text-xs font-semibold uppercase tracking-wider transition-colors cursor-pointer text-center"
+          >
+            Close
+          </button>
+
           <button
             onClick={() => {
               onClose();
               onOpenConsultation();
             }}
-            className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#111625] text-[#FAF8F5] hover:bg-[#875A1E] text-xs font-bold uppercase tracking-wider transition-all cursor-pointer"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-[#111625] text-[#FAF8F5] hover:bg-[#875A1E] text-xs font-bold uppercase tracking-wider transition-all cursor-pointer shadow-sm active:translate-y-0.5"
           >
             <span>Consult With {lawyer.name.split(' ')[0]}</span>
             <ArrowRight className="w-3.5 h-3.5 text-[#C79C5A]" />
-          </button>
-
-          <button 
-            onClick={onClose}
-            className="px-5 py-2.5 bg-white border border-[#DDD4C5] hover:bg-[#FAF8F5] text-slate-700 text-xs font-semibold uppercase tracking-wider transition-colors cursor-pointer"
-          >
-            Close
           </button>
         </div>
 

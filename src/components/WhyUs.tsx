@@ -36,24 +36,24 @@ export const WhyUs: React.FC = () => {
   ];
 
   return (
-    <section id="why-us" className="bg-[#111625] text-[#FAF8F5] py-28 lg:py-40 border-b border-[#222B42]">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+    <section id="why-us" className="bg-[#111625] text-[#FAF8F5] py-14 sm:py-20 lg:py-24 border-b border-[#222B42]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         
-        {/* Section Header with Expansive Margin */}
-        <div className="max-w-3xl mb-20">
-          <span className="font-title text-xs tracking-[0.28em] text-[#C79C5A] uppercase block mb-3">
+        {/* Section Header with Balanced Margin */}
+        <div className="max-w-3xl mb-10 sm:mb-14">
+          <span className="font-title text-xs tracking-[0.28em] text-[#C79C5A] uppercase block mb-2">
             Institutional Standards // Chamber Canons
           </span>
-          <h2 className="font-display text-4xl sm:text-5xl lg:text-[56px] font-normal text-[#FAF8F5] leading-[1.12]">
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-[48px] font-normal text-[#FAF8F5] leading-[1.12]">
             Principles forged in high-stakes courtroom contest.
           </h2>
-          <p className="font-reading text-lg sm:text-xl text-slate-300 mt-6 leading-relaxed sm:leading-loose">
+          <p className="font-reading text-base sm:text-lg text-slate-300 mt-4 leading-relaxed">
             Legal disputes of consequence require relentless trial preparation, institutional ethics, and strategic clarity.
           </p>
         </div>
 
-        {/* Gazette Canons with Generous Spacing */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 sm:gap-14 lg:gap-16">
+        {/* Gazette Canons with Balanced Spacing */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12">
           {canons.map((canon) => (
             <div 
               key={canon.num}

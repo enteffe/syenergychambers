@@ -35,7 +35,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     <header className="sticky top-0 z-40 w-full bg-[#FAF8F5]/95 backdrop-blur-md border-b border-[#E5DDD0] transition-colors">
       
       {/* Top Ledger Strip (Archival Gazette Style) */}
-      <div className="bg-[#111625] text-[#FAF8F5] text-[11px] py-2 px-6 sm:px-8 lg:px-12 border-b border-[#222B42]">
+      <div className="bg-[#111625] text-[#FAF8F5] text-[11px] py-1.5 px-4 sm:px-6 lg:px-8 xl:px-12 border-b border-[#222B42]">
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 font-sans">
           
           <div className="flex items-center gap-6">
@@ -104,8 +104,8 @@ export const Navbar: React.FC<NavbarProps> = ({
       </div>
 
       {/* Main Folio Header */}
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="flex items-center justify-between h-22">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+        <div className="flex items-center justify-between h-18 lg:h-20">
           
           {/* Monumental Wordmark */}
           <a href="#" className="flex items-baseline gap-3 group focus:outline-none">

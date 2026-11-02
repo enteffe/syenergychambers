@@ -3,11 +3,11 @@ import { Scale, Gavel, Landmark, FileText } from 'lucide-react';
 
 export const FunFacts: React.FC = () => {
   return (
-    <section className="bg-[#FAF8F5] border-b border-[#E5DDD0] py-28 lg:py-36">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+    <section className="bg-[#FAF8F5] border-b border-[#E5DDD0] py-14 sm:py-18 lg:py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         
         {/* Asymmetrical Ledger: Left Anchor + Right Data Rows */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 xl:gap-20 items-start">
           
           {/* Left Column: Visual Anchor (Monumental Metric with Peaceful Margins) */}
           <div className="lg:col-span-5 space-y-6">
@@ -33,7 +33,7 @@ export const FunFacts: React.FC = () => {
           {/* Right Column: High-Density Cause-Ledger Table with Restful Spacing */}
           <div className="lg:col-span-7 divide-y divide-[#E5DDD0] border-t border-b border-[#E5DDD0] font-sans">
             
-            <div className="py-8 sm:py-9 flex flex-col sm:flex-row sm:items-baseline justify-between gap-4">
+            <div className="py-5 sm:py-6 flex flex-col sm:flex-row sm:items-baseline justify-between gap-3">
               <div className="sm:w-2/5">
                 <span className="font-title text-sm font-bold uppercase tracking-[0.14em] text-[#111625] block">
                   Superior Forums
@@ -49,7 +49,7 @@ export const FunFacts: React.FC = () => {
               </div>
             </div>
 
-            <div className="py-8 sm:py-9 flex flex-col sm:flex-row sm:items-baseline justify-between gap-4">
+            <div className="py-5 sm:py-6 flex flex-col sm:flex-row sm:items-baseline justify-between gap-3">
               <div className="sm:w-2/5">
                 <span className="font-title text-sm font-bold uppercase tracking-[0.14em] text-[#111625] block">
                   700+ Matters
@@ -65,7 +65,7 @@ export const FunFacts: React.FC = () => {
               </div>
             </div>
 
-            <div className="py-8 sm:py-9 flex flex-col sm:flex-row sm:items-baseline justify-between gap-4">
+            <div className="py-5 sm:py-6 flex flex-col sm:flex-row sm:items-baseline justify-between gap-3">
               <div className="sm:w-2/5">
                 <span className="font-title text-sm font-bold uppercase tracking-[0.14em] text-[#111625] block">
                   Central Agency Pedigree
@@ -81,7 +81,7 @@ export const FunFacts: React.FC = () => {
               </div>
             </div>
 
-            <div className="py-8 sm:py-9 flex flex-col sm:flex-row sm:items-baseline justify-between gap-4">
+            <div className="py-5 sm:py-6 flex flex-col sm:flex-row sm:items-baseline justify-between gap-3">
               <div className="sm:w-2/5">
                 <span className="font-title text-sm font-bold uppercase tracking-[0.14em] text-[#111625] block">
                   Patiala House Chamber 238

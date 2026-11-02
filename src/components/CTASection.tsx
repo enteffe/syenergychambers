@@ -7,9 +7,9 @@ interface CTASectionProps {
 
 export const CTASection: React.FC<CTASectionProps> = ({ onOpenConsultation }) => {
   return (
-    <section className="py-24 sm:py-32 lg:py-40 bg-[#FAF8F5] border-b border-[#E5DDD0]">
-      <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="bg-[#111625] p-12 sm:p-16 lg:p-20 text-[#FAF8F5] shadow-2xl relative overflow-hidden border border-[#222B42]">
+    <section className="py-14 sm:py-18 lg:py-20 bg-[#FAF8F5] border-b border-[#E5DDD0]">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+        <div className="bg-[#111625] p-8 sm:p-12 lg:p-14 text-[#FAF8F5] shadow-xl relative overflow-hidden border border-[#222B42]">
           
           <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
             

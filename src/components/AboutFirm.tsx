@@ -3,21 +3,21 @@ import { ArrowRight, Scale, Landmark, ShieldCheck } from 'lucide-react';
 
 export const AboutFirm: React.FC = () => {
   return (
-    <section id="about" className="bg-[#FAF8F5] py-28 lg:py-40 border-b border-[#E5DDD0]">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+    <section id="about" className="bg-[#FAF8F5] py-14 sm:py-20 lg:py-24 border-b border-[#E5DDD0]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         
-        {/* Editorial Section Header with Generous Negative Space */}
-        <div className="mb-20">
-          <span className="font-title text-xs tracking-[0.28em] text-[#875A1E] uppercase block mb-3">
+        {/* Editorial Section Header with Balanced Negative Space */}
+        <div className="mb-10 sm:mb-14">
+          <span className="font-title text-xs tracking-[0.28em] text-[#875A1E] uppercase block mb-2">
             Institutional Profile // Est. New Delhi
           </span>
-          <h2 className="font-display text-4xl sm:text-5xl lg:text-[56px] font-normal text-[#111625] leading-[1.15] max-w-4xl text-balance">
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-[48px] font-normal text-[#111625] leading-[1.15] max-w-4xl text-balance">
             Litigation is not an exercise in theory. It is decided in the crucible of courtroom advocacy.
           </h2>
         </div>
 
         {/* Asymmetrical Broadsheet Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 xl:gap-20 items-start">
           
           {/* Left Column: Narrative Dossier & Courtroom Philosophy */}
           <div className="lg:col-span-7 space-y-8">
@@ -75,7 +75,7 @@ export const AboutFirm: React.FC = () => {
                 <img
                   src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&q=80&w=1200"
                   alt="Synergy Chambers Advocacy Session"
-                  className="w-full h-[420px] sm:h-[480px] object-cover object-top filter grayscale contrast-105 hover:grayscale-0 transition-all duration-700"
+                  className="w-full h-[320px] sm:h-[380px] lg:h-[400px] object-cover object-top filter grayscale contrast-105 hover:grayscale-0 transition-all duration-700"
                   loading="lazy"
                 />
               </div>

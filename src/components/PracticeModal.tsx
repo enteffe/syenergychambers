@@ -37,11 +37,11 @@ export const PracticeModal: React.FC<PracticeModalProps> = ({
       aria-modal="true"
     >
       <div 
-        className="bg-[#FAF8F5] border border-[#DDD4C5] w-full max-w-3xl max-h-[88vh] flex flex-col shadow-docket animate-modal-in overflow-hidden"
+        className="bg-[#FAF8F5] border border-[#E5DDD0] w-full max-w-3xl max-h-[90svh] flex flex-col shadow-2xl animate-modal-in overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header Bar */}
-        <div className="bg-[#111625] text-white p-6 sm:p-8 flex items-start justify-between shrink-0">
+        <div className="bg-[#111625] text-white p-5 sm:p-7 flex items-start justify-between shrink-0 border-b border-[#222B42]">
           <div>
             <div className="inline-flex items-center gap-2 font-title text-[11px] uppercase tracking-[0.2em] text-[#C79C5A] font-bold mb-1.5">
               <Scale className="w-3.5 h-3.5" />

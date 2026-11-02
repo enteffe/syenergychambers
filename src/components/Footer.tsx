@@ -24,8 +24,8 @@ export const Footer: React.FC<FooterProps> = ({
   };
 
   return (
-    <footer className="bg-[#111625] text-slate-300 pt-24 sm:pt-28 pb-16 border-t border-[#222B42] font-sans">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+    <footer className="bg-[#111625] text-slate-300 pt-14 sm:pt-18 pb-12 border-t border-[#222B42] font-sans">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         
         {/* Main Colophon Layout with Generous Column Margins */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 sm:gap-16 pb-16 border-b border-[#222B42]">

@@ -42,19 +42,19 @@ export const IndustriesSection: React.FC = () => {
   ];
 
   return (
-    <section id="industries" className="bg-[#FAF8F5] py-28 lg:py-40 border-b border-[#E5DDD0]">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+    <section id="industries" className="bg-[#FAF8F5] py-14 sm:py-20 lg:py-24 border-b border-[#E5DDD0]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         
         {/* Asymmetrical Layout: Left Briefing + Right Regulatory Ledger */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 xl:gap-20 items-start">
           
           {/* Left Column: Sectoral Authority Statement */}
-          <div className="lg:col-span-5 space-y-8 lg:sticky lg:top-32">
+          <div className="lg:col-span-5 space-y-6 lg:sticky lg:top-24">
             <span className="font-title text-xs tracking-[0.28em] text-[#875A1E] uppercase block">
               Regulatory Scope // Sector Representation
             </span>
 
-            <h2 className="font-display text-4xl sm:text-5xl font-normal text-[#111625] leading-[1.15] text-balance">
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-[44px] font-normal text-[#111625] leading-[1.15] text-balance">
               Advising enterprises facing investigative &amp; commercial exposure.
             </h2>
 
@@ -75,7 +75,7 @@ export const IndustriesSection: React.FC = () => {
           {/* Right Column: Regulatory Index Ledger with Serene Spacing */}
           <div className="lg:col-span-7 divide-y divide-[#E5DDD0] border-t border-b border-[#E5DDD0]">
             {sectors.map((sector) => (
-              <div key={sector.code} className="py-8 sm:py-9 hover:bg-[#F4EFEB] transition-colors px-4 -mx-4">
+              <div key={sector.code} className="py-5 sm:py-6 hover:bg-[#F4EFEB] transition-colors px-3 sm:px-4 -mx-3 sm:-mx-4">
                 <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-3 mb-3">
                   <div className="flex items-baseline gap-4">
                     <span className="font-mono text-xs font-bold text-[#875A1E]">

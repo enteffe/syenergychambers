@@ -89,24 +89,24 @@ export const ConsultationSection: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="bg-[#FAF8F5] py-28 lg:py-40 border-b border-[#E5DDD0]">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+    <section id="contact" className="bg-[#FAF8F5] py-14 sm:py-20 lg:py-24 border-b border-[#E5DDD0]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         
-        {/* Section Header with Generous Negative Space */}
-        <div className="max-w-3xl mb-20">
-          <span className="font-title text-xs tracking-[0.28em] text-[#875A1E] uppercase block mb-3">
+        {/* Section Header with Balanced Negative Space */}
+        <div className="max-w-3xl mb-10 sm:mb-12">
+          <span className="font-title text-xs tracking-[0.28em] text-[#875A1E] uppercase block mb-2">
             Case Intake Registry // Confidential Briefing
           </span>
-          <h2 className="font-display text-4xl sm:text-5xl lg:text-[56px] font-normal text-[#111625] leading-[1.12]">
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-[48px] font-normal text-[#111625] leading-[1.12]">
             Initiate a Case Docket &amp; Matter Briefing
           </h2>
-          <p className="font-reading text-base sm:text-lg text-slate-700 mt-5 leading-relaxed sm:leading-loose">
+          <p className="font-reading text-sm sm:text-base text-slate-700 mt-3 leading-relaxed">
             In compliance with Bar Council of India standards of professional conduct, consultations and briefings are scheduled strictly upon voluntary inquiry. Complete the docket briefing below for preliminary conflict check.
           </p>
         </div>
 
         {/* Asymmetrical Grid: Left Ledger Details + Right Paper Intake Form */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-20 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
           
           {/* Left Column: Official Chambers Dispatch Ledger */}
           <div className="lg:col-span-5 space-y-8">

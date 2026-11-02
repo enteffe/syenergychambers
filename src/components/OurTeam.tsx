@@ -24,16 +24,16 @@ export const OurTeam: React.FC<OurTeamProps> = ({ onSelectLawyer }) => {
   const remainingLawyers = filteredLawyers.filter(l => filter !== 'founders' || l.id !== featuredCounsel.id);
 
   return (
-    <section id="team" className="bg-[#FAF8F5] py-28 lg:py-40 border-b border-[#E5DDD0]">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+    <section id="team" className="bg-[#FAF8F5] py-14 sm:py-20 lg:py-24 border-b border-[#E5DDD0]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         
-        {/* Section Header with Expansive Negative Space */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 pb-10 border-b border-[#E5DDD0] mb-16">
+        {/* Section Header with Balanced Negative Space */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 sm:pb-8 border-b border-[#E5DDD0] mb-10 sm:mb-12">
           <div>
-            <span className="font-title text-xs tracking-[0.28em] text-[#875A1E] uppercase block mb-3">
+            <span className="font-title text-xs tracking-[0.28em] text-[#875A1E] uppercase block mb-2">
               Chambers Advocates // Counsel Roster
             </span>
-            <h2 className="font-display text-4xl sm:text-5xl lg:text-[56px] font-normal text-[#111625] tracking-tight leading-[1.12]">
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-[48px] font-normal text-[#111625] tracking-tight leading-[1.12]">
               Courtroom Advocates &amp; Bench Counsel
             </h2>
           </div>
@@ -83,29 +83,29 @@ export const OurTeam: React.FC<OurTeamProps> = ({ onSelectLawyer }) => {
           </div>
         </div>
 
-        {/* Featured Master Dossier: Akshay Chauhan (Visual Anchor with Luxurious Padding) */}
+        {/* Featured Master Dossier: Akshay Chauhan (Visual Anchor with Balanced Padding) */}
         {filter === 'all' && (
           <div 
             onClick={() => onSelectLawyer(featuredCounsel.id)}
-            className="mb-20 p-10 sm:p-14 border border-[#E5DDD0] bg-white shadow-xl cursor-pointer hover:border-[#875A1E] transition-all group"
+            className="mb-12 p-6 sm:p-8 xl:p-10 border border-[#E5DDD0] bg-white shadow-lg cursor-pointer hover:border-[#875A1E] transition-all group"
           >
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-12 items-center">
               
               <div className="lg:col-span-4">
-                <div className="h-88 sm:h-[420px] w-full overflow-hidden bg-[#111625] relative">
+                <div className="h-72 sm:h-80 lg:h-[360px] w-full overflow-hidden bg-[#111625] relative">
                   <img
                     src={featuredCounsel.imageUrl}
                     alt={featuredCounsel.name}
                     className="w-full h-full object-cover object-top filter grayscale contrast-105 group-hover:grayscale-0 transition-all duration-700"
                     loading="lazy"
                   />
-                  <div className="absolute top-4 left-4 bg-[#111625] text-[#C79C5A] px-3 py-1.5 text-[10px] font-title uppercase tracking-widest">
+                  <div className="absolute top-3 left-3 bg-[#111625] text-[#C79C5A] px-2.5 py-1 text-[10px] font-title uppercase tracking-widest">
                     Featured Trial Counsel
                   </div>
                 </div>
               </div>
 
-              <div className="lg:col-span-8 space-y-6">
+              <div className="lg:col-span-8 space-y-4 sm:space-y-5">
                 <div>
                   <span className="font-title text-xs uppercase tracking-[0.24em] text-[#875A1E] block mb-2">
                     {featuredCounsel.role} • {featuredCounsel.location}
