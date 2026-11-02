@@ -161,12 +161,12 @@ export const ConsultationSection: React.FC = () => {
               </div>
 
               {/* Statutory Privilege Box */}
-              <div className="p-4 bg-teal-50 border border-teal-200 rounded-xl space-y-1.5">
+              <div className="p-4 bg-[#fcfaf7] border border-[#CDB091]/30 rounded-xl space-y-1.5">
                 <div className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#283361]">
-                  <Lock className="w-3.5 h-3.5" />
+                  <Lock className="w-3.5 h-3.5 text-[#CDB091]" />
                   <span>Statutory Attorney-Client Privilege</span>
                 </div>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="text-xs text-slate-600 leading-relaxed font-normal">
                   All factual particulars, files, and case notes submitted via this docket are privileged communications protected under Sections 126–129 of the Indian Evidence Act, 1872.
                 </p>
               </div>
@@ -179,8 +179,8 @@ export const ConsultationSection: React.FC = () => {
               
               {isSubmitted ? (
                 <div className="text-center py-10 space-y-6">
-                  <div className="w-16 h-16 bg-teal-50 text-[#283361] border border-teal-200 rounded-full flex items-center justify-center mx-auto">
-                    <Check className="w-8 h-8" />
+                  <div className="w-16 h-16 bg-[#fcfaf7] text-[#283361] border border-[#CDB091]/40 rounded-full flex items-center justify-center mx-auto">
+                    <Check className="w-8 h-8 text-[#CDB091]" />
                   </div>
                   <div>
                     <span className="text-xs font-bold uppercase tracking-wider text-[#283361] block mb-1">

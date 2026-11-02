@@ -170,10 +170,20 @@ export const Footer: React.FC<FooterProps> = ({
 
         </div>
 
+        {/* Statutory Compliance Notice Box */}
+        <div className="py-6 border-b border-white/10 text-[11px] text-slate-400 leading-relaxed space-y-1">
+          <p className="font-semibold text-slate-300">
+            Regulatory Compliance Notice (Bar Council of India):
+          </p>
+          <p>
+            As per the rules of the Bar Council of India, law firms and advocates are not permitted to solicit work or advertise. The contents of this website are intended solely to provide general information regarding Synergy Chambers and its practice areas upon voluntary inquiry. Nothing on this website constitutes legal advice or creates an advocate-client relationship.
+          </p>
+        </div>
+
         {/* Secondary Footer (Bottom Bar with Copyright and Social Icons) */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-slate-500 text-center sm:text-left">
-            &copy; 2026 Synergy Chambers. All Rights Reserved.
+            &copy; 2026 Synergy Chambers (Advocates &amp; Solicitors). All Rights Reserved.
           </p>
 
           <div className="flex items-center gap-3">

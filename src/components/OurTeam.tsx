@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, Users, Scale, MapPin } from 'lucide-react';
+import { ArrowRight, Users, Scale, MapPin, GraduationCap } from 'lucide-react';
 import { FOUNDERS, CHANDIGARH_TEAM, HARYANA_TEAM, Lawyer } from '../data/firmData';
 
 interface OurTeamProps {
@@ -25,9 +25,9 @@ export const OurTeam: React.FC<OurTeamProps> = ({ onSelectLawyer }) => {
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
           
-          {/* Left Column: Title & Description (Directly matches K&R Legal left column) */}
+          {/* Left Column: Title & Description */}
           <div className="lg:col-span-4 space-y-5 lg:sticky lg:top-28">
-            <p className="text-[#CDB091] font-extrabold text-sm uppercase tracking-[2px]">
+            <p className="text-[#CDB091] font-extrabold text-xs sm:text-sm uppercase tracking-[2px]">
               Chambers Advocates
             </p>
             
@@ -36,7 +36,7 @@ export const OurTeam: React.FC<OurTeamProps> = ({ onSelectLawyer }) => {
             </h2>
 
             <p className="text-base text-slate-600 leading-relaxed font-normal">
-              A focused team supporting high-stakes litigation, investigations, and complex disputes — directed by founding advocates at Patiala House Courts in New Delhi.
+              A trial-tested counsel team advising on regulatory investigations, criminal proceedings, and high-value disputes across Delhi NCR and the northern corridor.
             </p>
 
             {/* Filter Tabs */}
@@ -45,7 +45,7 @@ export const OurTeam: React.FC<OurTeamProps> = ({ onSelectLawyer }) => {
                 onClick={() => setFilter('all')}
                 className={`px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all cursor-pointer ${
                   filter === 'all'
-                    ? 'bg-[#283361] text-[#CDB091]'
+                    ? 'bg-[#283361] text-[#CDB091] shadow-xs'
                     : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
                 }`}
               >
@@ -55,7 +55,7 @@ export const OurTeam: React.FC<OurTeamProps> = ({ onSelectLawyer }) => {
                 onClick={() => setFilter('founders')}
                 className={`px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all cursor-pointer ${
                   filter === 'founders'
-                    ? 'bg-[#283361] text-[#CDB091]'
+                    ? 'bg-[#283361] text-[#CDB091] shadow-xs'
                     : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
                 }`}
               >
@@ -65,7 +65,7 @@ export const OurTeam: React.FC<OurTeamProps> = ({ onSelectLawyer }) => {
                 onClick={() => setFilter('chandigarh')}
                 className={`px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all cursor-pointer ${
                   filter === 'chandigarh'
-                    ? 'bg-[#283361] text-[#CDB091]'
+                    ? 'bg-[#283361] text-[#CDB091] shadow-xs'
                     : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
                 }`}
               >
@@ -75,7 +75,7 @@ export const OurTeam: React.FC<OurTeamProps> = ({ onSelectLawyer }) => {
                 onClick={() => setFilter('haryana')}
                 className={`px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all cursor-pointer ${
                   filter === 'haryana'
-                    ? 'bg-[#283361] text-[#CDB091]'
+                    ? 'bg-[#283361] text-[#CDB091] shadow-xs'
                     : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
                 }`}
               >
@@ -88,20 +88,20 @@ export const OurTeam: React.FC<OurTeamProps> = ({ onSelectLawyer }) => {
                 onClick={() => setFilter('all')}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-[#283361] hover:bg-[#1c2445] text-white text-xs font-bold uppercase tracking-wider transition-all shadow-md group cursor-pointer"
               >
-                <span>View Complete Roster</span>
+                <span>Complete Roster Overview</span>
                 <ArrowRight className="w-4 h-4 text-[#CDB091] group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
           </div>
 
-          {/* Right Column: Team Cards (Matches K&R Legal team-card layout) */}
+          {/* Right Column: Team Cards */}
           <div className="lg:col-span-8">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredLawyers.map((lawyer) => (
                 <div
                   key={lawyer.id}
                   onClick={() => onSelectLawyer(lawyer.id)}
-                  className="bg-white rounded-xl border border-slate-200/80 shadow-[0_4px_15px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_30px_rgba(40,51,97,0.12)] hover:-translate-y-1.5 transition-all duration-300 overflow-hidden flex flex-col justify-between cursor-pointer group"
+                  className="bg-white rounded-xl border border-slate-200/90 shadow-[0_4px_15px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_30px_rgba(40,51,97,0.12)] hover:-translate-y-1.5 transition-all duration-300 overflow-hidden flex flex-col justify-between cursor-pointer group"
                 >
                   {/* Portrait Image */}
                   <div className="h-64 sm:h-72 w-full overflow-hidden bg-slate-900 relative">
@@ -112,9 +112,14 @@ export const OurTeam: React.FC<OurTeamProps> = ({ onSelectLawyer }) => {
                       loading="lazy"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                    
+                    {/* Location Badge */}
+                    <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-xs px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider text-[#283361] border border-white/40">
+                      {lawyer.location.includes('Patiala House') ? 'New Delhi' : lawyer.location.includes('Chandigarh') ? 'Chandigarh' : 'Haryana'}
+                    </div>
                   </div>
 
-                  {/* Card Content (Matches K&R Legal .team-info) */}
+                  {/* Card Content */}
                   <div className="p-5 space-y-2">
                     <h3 className="font-serif text-xl font-bold text-[#283361] group-hover:text-[#CDB091] transition-colors leading-snug">
                       {lawyer.name}
@@ -124,14 +129,13 @@ export const OurTeam: React.FC<OurTeamProps> = ({ onSelectLawyer }) => {
                       {lawyer.role}
                     </span>
 
-                    <p className="text-xs text-slate-500 flex items-center gap-1 pt-1">
-                      <MapPin className="w-3.5 h-3.5 text-slate-400" />
-                      <span>{lawyer.location}</span>
+                    <p className="text-xs text-slate-500 line-clamp-2 pt-1 font-normal leading-relaxed">
+                      {lawyer.bio}
                     </p>
 
-                    <div className="pt-3 border-t border-slate-100 flex items-center">
-                      <span className="text-sm font-semibold text-[#CDB091] group-hover:text-[#283361] inline-flex items-center gap-1.5 transition-colors">
-                        Know More <ArrowRight className="w-3.5 h-3.5" />
+                    <div className="pt-3 border-t border-slate-100 flex items-center justify-between">
+                      <span className="text-xs font-bold text-[#CDB091] group-hover:text-[#283361] inline-flex items-center gap-1.5 transition-colors">
+                        View Dossier &amp; Mandates <ArrowRight className="w-3.5 h-3.5" />
                       </span>
                     </div>
                   </div>

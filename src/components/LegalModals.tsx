@@ -33,19 +33,19 @@ export const LegalModals: React.FC<LegalModalsProps> = ({ type, onClose }) => {
       aria-labelledby="legal-modal-title"
     >
       <div 
-        className="bg-white border border-slate-200 rounded-2xl max-w-2xl w-full shadow-2xl relative overflow-hidden"
+        className="bg-white border border-slate-200 rounded-[15px] max-w-2xl w-full shadow-2xl relative overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="bg-[#088395] text-white p-6 sm:p-7 flex items-center justify-between">
+        <div className="bg-[#283361] text-white p-6 sm:p-7 flex items-center justify-between">
           <div className="flex items-center gap-3.5">
-            <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-white">
+            <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-[#CDB091]">
               {type === 'disclaimer' ? <Shield className="w-5 h-5" /> : <Lock className="w-5 h-5" />}
             </div>
             <div>
-              <h3 id="legal-modal-title" className="text-xl sm:text-2xl font-bold text-white">
+              <h3 id="legal-modal-title" className="font-serif text-xl sm:text-2xl font-bold text-white">
                 {type === 'disclaimer' ? 'Legal Disclaimer & Statutory Compliance' : 'Client Privilege & Confidentiality Policy'}
               </h3>
-              <p className="text-xs text-teal-100 font-medium">Synergy Chambers (Advocates &amp; Solicitors)</p>
+              <p className="text-xs text-[#CDB091] font-medium">Synergy Chambers (Advocates &amp; Solicitors)</p>
             </div>
           </div>
           <button
@@ -94,7 +94,7 @@ export const LegalModals: React.FC<LegalModalsProps> = ({ type, onClose }) => {
           </span>
           <button
             onClick={onClose}
-            className="px-5 py-2 rounded-full bg-[#088395] hover:bg-[#05626e] text-white text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer"
+            className="px-5 py-2 rounded-full bg-[#283361] hover:bg-[#1a2244] text-[#CDB091] hover:text-white text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer"
           >
             Acknowledge &amp; Close
           </button>

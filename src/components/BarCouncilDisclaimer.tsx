@@ -40,14 +40,14 @@ export const BarCouncilDisclaimer: React.FC = () => {
         className="bg-white border border-slate-200 rounded-2xl max-w-xl w-full shadow-2xl text-slate-900 p-6 sm:p-8 space-y-6"
       >
         <div className="flex items-center gap-3.5 pb-4 border-b border-slate-100">
-          <div className="w-12 h-12 rounded-xl bg-teal-50 text-[#088395] border border-teal-100 flex items-center justify-center shrink-0">
-            <Scale className="w-6 h-6" />
+          <div className="w-12 h-12 rounded-xl bg-[#fdfaf6] text-[#283361] border border-[#CDB091]/30 flex items-center justify-center shrink-0">
+            <Scale className="w-6 h-6 text-[#CDB091]" />
           </div>
           <div>
-            <h3 id="disclaimer-title" className="text-xl sm:text-2xl font-bold text-slate-900">
+            <h3 id="disclaimer-title" className="font-serif text-xl sm:text-2xl font-bold text-[#283361]">
               Bar Council of India Disclaimer
             </h3>
-            <p className="text-[11px] text-[#088395] uppercase tracking-wider font-bold">
+            <p className="text-[11px] text-[#CDB091] uppercase tracking-[1.5px] font-bold">
               Rule 36, Bar Council of India Rules
             </p>
           </div>
@@ -82,9 +82,9 @@ export const BarCouncilDisclaimer: React.FC = () => {
           </span>
           <button
             onClick={handleAccept}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-[#088395] hover:bg-[#05626e] text-white font-bold text-xs uppercase tracking-wider transition-colors cursor-pointer"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-[#283361] hover:bg-[#1a2244] text-[#CDB091] hover:text-white font-bold text-xs uppercase tracking-wider transition-colors cursor-pointer border border-[#CDB091]/30"
           >
-            <Check className="w-4 h-4" />
+            <Check className="w-4 h-4 text-[#CDB091]" />
             <span>I Acknowledge &amp; Proceed</span>
           </button>
         </div>
