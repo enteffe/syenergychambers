@@ -36,36 +36,36 @@ export const WhyUs: React.FC = () => {
   ];
 
   return (
-    <section id="why-us" className="bg-[#111625] text-[#FAF8F5] py-20 lg:py-28 border-b border-[#2C3652]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="why-us" className="bg-[#111625] text-[#FAF8F5] py-28 lg:py-40 border-b border-[#222B42]">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         
-        {/* Section Header */}
-        <div className="max-w-3xl mb-16">
-          <span className="font-title text-xs tracking-[0.25em] text-[#C79C5A] uppercase block mb-2">
+        {/* Section Header with Expansive Margin */}
+        <div className="max-w-3xl mb-20">
+          <span className="font-title text-xs tracking-[0.28em] text-[#C79C5A] uppercase block mb-3">
             Institutional Standards // Chamber Canons
           </span>
-          <h2 className="font-display text-4xl sm:text-5xl lg:text-[54px] font-normal text-[#FAF8F5] leading-tight">
+          <h2 className="font-display text-4xl sm:text-5xl lg:text-[56px] font-normal text-[#FAF8F5] leading-[1.12]">
             Principles forged in high-stakes courtroom contest.
           </h2>
-          <p className="font-reading text-lg text-slate-300 mt-4 leading-relaxed">
+          <p className="font-reading text-lg sm:text-xl text-slate-300 mt-6 leading-relaxed sm:leading-loose">
             Legal disputes of consequence require relentless trial preparation, institutional ethics, and strategic clarity.
           </p>
         </div>
 
-        {/* Gazette Canons (Editorial Asymmetric Split Grid) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
+        {/* Gazette Canons with Generous Spacing */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 sm:gap-14 lg:gap-16">
           {canons.map((canon) => (
             <div 
               key={canon.num}
-              className="border-t border-[#2C3652] pt-6 space-y-3"
+              className="border-t border-[#222B42] pt-8 space-y-4"
             >
-              <span className="font-title text-[11px] font-bold text-[#C79C5A] tracking-[0.2em] block">
+              <span className="font-title text-xs font-bold text-[#C79C5A] tracking-[0.22em] block">
                 {canon.num}
               </span>
               <h3 className="font-display text-2xl text-white font-normal leading-snug">
                 {canon.title}
               </h3>
-              <p className="font-reading text-sm text-slate-300 leading-relaxed font-normal">
+              <p className="font-reading text-sm sm:text-base text-slate-300/90 leading-relaxed sm:leading-loose font-normal">
                 {canon.text}
               </p>
             </div>

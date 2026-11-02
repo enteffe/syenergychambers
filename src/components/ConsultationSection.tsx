@@ -89,79 +89,79 @@ export const ConsultationSection: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="bg-[#FAF8F5] py-20 lg:py-28 border-b border-[#DDD4C5]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="bg-[#FAF8F5] py-28 lg:py-40 border-b border-[#E5DDD0]">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         
-        {/* Section Header */}
-        <div className="max-w-3xl mb-14">
-          <span className="font-title text-xs tracking-[0.25em] text-[#875A1E] uppercase block mb-2">
+        {/* Section Header with Generous Negative Space */}
+        <div className="max-w-3xl mb-20">
+          <span className="font-title text-xs tracking-[0.28em] text-[#875A1E] uppercase block mb-3">
             Case Intake Registry // Confidential Briefing
           </span>
-          <h2 className="font-display text-4xl sm:text-5xl lg:text-[52px] font-normal text-[#111625] leading-tight">
+          <h2 className="font-display text-4xl sm:text-5xl lg:text-[56px] font-normal text-[#111625] leading-[1.12]">
             Initiate a Case Docket &amp; Matter Briefing
           </h2>
-          <p className="font-reading text-base text-slate-700 mt-3 leading-relaxed">
+          <p className="font-reading text-base sm:text-lg text-slate-700 mt-5 leading-relaxed sm:leading-loose">
             In compliance with Bar Council of India standards of professional conduct, consultations and briefings are scheduled strictly upon voluntary inquiry. Complete the docket briefing below for preliminary conflict check.
           </p>
         </div>
 
         {/* Asymmetrical Grid: Left Ledger Details + Right Paper Intake Form */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-20 items-start">
           
           {/* Left Column: Official Chambers Dispatch Ledger */}
-          <div className="lg:col-span-5 space-y-6">
-            <div className="bg-white border border-[#DDD4C5] p-7 sm:p-8 space-y-6 shadow-folio">
-              <div className="space-y-1">
-                <span className="font-title text-[10px] uppercase font-bold tracking-[0.2em] text-[#875A1E] block">
+          <div className="lg:col-span-5 space-y-8">
+            <div className="bg-white border border-[#E5DDD0] p-8 sm:p-10 space-y-8 shadow-md">
+              <div className="space-y-1.5">
+                <span className="font-title text-[10px] uppercase font-bold tracking-[0.22em] text-[#875A1E] block">
                   Chamber Seat
                 </span>
-                <h3 className="font-serif text-xl font-bold text-[#111625]">
+                <h3 className="font-serif text-2xl font-bold text-[#111625]">
                   {FIRM_DETAILS.establishedLocation}
                 </h3>
-                <p className="text-xs text-slate-600 font-sans pt-1">
+                <p className="text-sm text-slate-600 font-sans pt-1">
                   Opposite National Gallery of Modern Art, New Delhi – 110001
                 </p>
               </div>
 
-              <div className="space-y-4 text-xs font-sans pt-4 border-t border-[#E9E2D8]">
+              <div className="space-y-5 text-xs font-sans pt-6 border-t border-[#EFE9DF]">
                 <div>
-                  <span className="text-[10px] uppercase font-bold tracking-wider text-slate-500 block mb-1">
+                  <span className="text-[10px] uppercase font-bold tracking-wider text-slate-500 block mb-1.5">
                     Registry Email
                   </span>
                   <a 
                     href={`mailto:${FIRM_DETAILS.email}`}
-                    className="font-bold text-[#111625] text-sm hover:text-[#875A1E] transition-colors"
+                    className="font-bold text-[#111625] text-base hover:text-[#875A1E] transition-colors"
                   >
                     {FIRM_DETAILS.email}
                   </a>
                 </div>
 
                 <div>
-                  <span className="text-[10px] uppercase font-bold tracking-wider text-slate-500 block mb-1">
+                  <span className="text-[10px] uppercase font-bold tracking-wider text-slate-500 block mb-1.5">
                     Operating Hours
                   </span>
-                  <span className="font-semibold text-slate-800 block">
+                  <span className="font-semibold text-slate-800 text-sm block">
                     {FIRM_DETAILS.hours}
                   </span>
-                  <span className="text-[11px] text-slate-500 block mt-0.5">
+                  <span className="text-xs text-slate-500 block mt-1">
                     Urgent remand, production, and bail interventions prioritized 24/7.
                   </span>
                 </div>
 
                 <div>
-                  <span className="text-[10px] uppercase font-bold tracking-wider text-slate-500 block mb-1">
+                  <span className="text-[10px] uppercase font-bold tracking-wider text-slate-500 block mb-1.5">
                     Regional Practice Corridors
                   </span>
-                  <span className="text-slate-700 block leading-relaxed">
+                  <span className="text-slate-700 text-xs block leading-relaxed sm:leading-loose">
                     Punjab &amp; Haryana High Court at Chandigarh • District Sessions Benches in Gurugram, Rewari, Karnal &amp; Panipat.
                   </span>
                 </div>
               </div>
 
               {/* Statutory Privilege Framework Box */}
-              <div className="p-4 bg-[#F4EFEB] border border-[#DDD4C5] space-y-1.5 font-sans">
-                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#111625]">
-                  <Lock className="w-3.5 h-3.5 text-[#875A1E]" />
+              <div className="p-5 bg-[#F4EFEB] border border-[#E5DDD0] space-y-2 font-sans">
+                <div className="flex items-center gap-2.5 text-xs font-bold uppercase tracking-wider text-[#111625]">
+                  <Lock className="w-4 h-4 text-[#875A1E]" />
                   <span>Statutory Attorney-Client Privilege</span>
                 </div>
                 <p className="text-xs text-slate-700 leading-relaxed font-normal">
@@ -173,7 +173,7 @@ export const ConsultationSection: React.FC = () => {
 
           {/* Right Column: Confidential Paper Form */}
           <div className="lg:col-span-7">
-            <div className="border border-[#DDD4C5] bg-white p-8 sm:p-10 shadow-folio relative">
+            <div className="border border-[#E5DDD0] bg-white p-10 sm:p-14 shadow-xl relative">
               
               {isSubmitted ? (
                 <div className="text-center py-10 space-y-6 font-sans">
@@ -227,9 +227,9 @@ export const ConsultationSection: React.FC = () => {
                   />
 
                   {/* Name Fields */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="firstName" className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">
+                      <label htmlFor="firstName" className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
                         First Name *
                       </label>
                       <input
@@ -238,21 +238,21 @@ export const ConsultationSection: React.FC = () => {
                         required
                         value={formData.firstName}
                         onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
-                        className={`w-full px-3.5 py-2.5 text-xs bg-[#FAF8F5] border text-[#111625] focus:outline-none transition-colors ${
-                          errors.firstName ? 'border-red-600 bg-red-50/20' : 'border-[#DDD4C5] focus:border-[#875A1E] focus:bg-white'
+                        className={`w-full px-4 py-3 text-sm bg-[#FAF8F5] border text-[#111625] focus:outline-none transition-colors ${
+                          errors.firstName ? 'border-red-600 bg-red-50/20' : 'border-[#E5DDD0] focus:border-[#875A1E] focus:bg-white'
                         }`}
                         placeholder="e.g. Vikram"
                       />
                       {errors.firstName && (
-                        <p className="mt-1 text-[11px] text-red-600 flex items-center gap-1">
-                          <AlertCircle className="w-3 h-3 shrink-0" />
+                        <p className="mt-1.5 text-xs text-red-600 flex items-center gap-1">
+                          <AlertCircle className="w-3.5 h-3.5 shrink-0" />
                           <span>{errors.firstName}</span>
                         </p>
                       )}
                     </div>
 
                     <div>
-                      <label htmlFor="lastName" className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">
+                      <label htmlFor="lastName" className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
                         Last Name *
                       </label>
                       <input
@@ -261,14 +261,14 @@ export const ConsultationSection: React.FC = () => {
                         required
                         value={formData.lastName}
                         onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
-                        className={`w-full px-3.5 py-2.5 text-xs bg-[#FAF8F5] border text-[#111625] focus:outline-none transition-colors ${
-                          errors.lastName ? 'border-red-600 bg-red-50/20' : 'border-[#DDD4C5] focus:border-[#875A1E] focus:bg-white'
+                        className={`w-full px-4 py-3 text-sm bg-[#FAF8F5] border text-[#111625] focus:outline-none transition-colors ${
+                          errors.lastName ? 'border-red-600 bg-red-50/20' : 'border-[#E5DDD0] focus:border-[#875A1E] focus:bg-white'
                         }`}
                         placeholder="e.g. Sharma"
                       />
                       {errors.lastName && (
-                        <p className="mt-1 text-[11px] text-red-600 flex items-center gap-1">
-                          <AlertCircle className="w-3 h-3 shrink-0" />
+                        <p className="mt-1.5 text-xs text-red-600 flex items-center gap-1">
+                          <AlertCircle className="w-3.5 h-3.5 shrink-0" />
                           <span>{errors.lastName}</span>
                         </p>
                       )}
@@ -276,9 +276,9 @@ export const ConsultationSection: React.FC = () => {
                   </div>
 
                   {/* Contact Fields */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="email" className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">
+                      <label htmlFor="email" className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
                         Corporate / Personal Email *
                       </label>
                       <input
@@ -287,21 +287,21 @@ export const ConsultationSection: React.FC = () => {
                         required
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className={`w-full px-3.5 py-2.5 text-xs bg-[#FAF8F5] border text-[#111625] focus:outline-none transition-colors ${
-                          errors.email ? 'border-red-600 bg-red-50/20' : 'border-[#DDD4C5] focus:border-[#875A1E] focus:bg-white'
+                        className={`w-full px-4 py-3 text-sm bg-[#FAF8F5] border text-[#111625] focus:outline-none transition-colors ${
+                          errors.email ? 'border-red-600 bg-red-50/20' : 'border-[#E5DDD0] focus:border-[#875A1E] focus:bg-white'
                         }`}
                         placeholder="counsel@domain.com"
                       />
                       {errors.email && (
-                        <p className="mt-1 text-[11px] text-red-600 flex items-center gap-1">
-                          <AlertCircle className="w-3 h-3 shrink-0" />
+                        <p className="mt-1.5 text-xs text-red-600 flex items-center gap-1">
+                          <AlertCircle className="w-3.5 h-3.5 shrink-0" />
                           <span>{errors.email}</span>
                         </p>
                       )}
                     </div>
 
                     <div>
-                      <label htmlFor="phone" className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">
+                      <label htmlFor="phone" className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
                         Direct Phone / Mobile *
                       </label>
                       <input
@@ -310,14 +310,14 @@ export const ConsultationSection: React.FC = () => {
                         required
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className={`w-full px-3.5 py-2.5 text-xs bg-[#FAF8F5] border text-[#111625] focus:outline-none transition-colors ${
-                          errors.phone ? 'border-red-600 bg-red-50/20' : 'border-[#DDD4C5] focus:border-[#875A1E] focus:bg-white'
+                        className={`w-full px-4 py-3 text-sm bg-[#FAF8F5] border text-[#111625] focus:outline-none transition-colors ${
+                          errors.phone ? 'border-red-600 bg-red-50/20' : 'border-[#E5DDD0] focus:border-[#875A1E] focus:bg-white'
                         }`}
                         placeholder="+91 98XXX XXXXX"
                       />
                       {errors.phone && (
-                        <p className="mt-1 text-[11px] text-red-600 flex items-center gap-1">
-                          <AlertCircle className="w-3 h-3 shrink-0" />
+                        <p className="mt-1.5 text-xs text-red-600 flex items-center gap-1">
+                          <AlertCircle className="w-3.5 h-3.5 shrink-0" />
                           <span>{errors.phone}</span>
                         </p>
                       )}
@@ -325,16 +325,16 @@ export const ConsultationSection: React.FC = () => {
                   </div>
 
                   {/* Practice Area & Forum Selection */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="practiceArea" className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">
+                      <label htmlFor="practiceArea" className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
                         Practice Remit *
                       </label>
                       <select
                         id="practiceArea"
                         value={formData.practiceArea}
                         onChange={(e) => setFormData({ ...formData, practiceArea: e.target.value })}
-                        className="w-full px-3.5 py-2.5 text-xs bg-[#FAF8F5] border border-[#DDD4C5] text-[#111625] focus:outline-none focus:border-[#875A1E]"
+                        className="w-full px-4 py-3 text-sm bg-[#FAF8F5] border border-[#E5DDD0] text-[#111625] focus:outline-none focus:border-[#875A1E]"
                       >
                         {PRACTICE_AREAS.map((practice) => (
                           <option key={practice.id} value={practice.id}>
@@ -345,14 +345,14 @@ export const ConsultationSection: React.FC = () => {
                     </div>
 
                     <div>
-                      <label htmlFor="jurisdiction" className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">
+                      <label htmlFor="jurisdiction" className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
                         Primary Court / Forum *
                       </label>
                       <select
                         id="jurisdiction"
                         value={formData.jurisdiction}
                         onChange={(e) => setFormData({ ...formData, jurisdiction: e.target.value })}
-                        className="w-full px-3.5 py-2.5 text-xs bg-[#FAF8F5] border border-[#DDD4C5] text-[#111625] focus:outline-none focus:border-[#875A1E]"
+                        className="w-full px-4 py-3 text-sm bg-[#FAF8F5] border border-[#E5DDD0] text-[#111625] focus:outline-none focus:border-[#875A1E]"
                       >
                         <option value="delhi">Delhi NCR (Patiala House / Delhi High Court)</option>
                         <option value="chandigarh">Chandigarh (High Court / CAT / AFT)</option>
@@ -364,22 +364,22 @@ export const ConsultationSection: React.FC = () => {
                   </div>
 
                   {/* Urgent Remand / Listing Checkbox */}
-                  <div className="flex items-start gap-3 p-3.5 bg-[#FAF8F5] border border-[#DDD4C5]">
+                  <div className="flex items-start gap-3.5 p-4 bg-[#FAF8F5] border border-[#E5DDD0]">
                     <input
                       id="isUrgent"
                       type="checkbox"
                       checked={formData.isUrgent}
                       onChange={(e) => setFormData({ ...formData, isUrgent: e.target.checked })}
-                      className="mt-0.5 h-4 w-4 text-[#875A1E] border-[#DDD4C5] focus:ring-[#875A1E] cursor-pointer"
+                      className="mt-0.5 h-4 w-4 text-[#875A1E] border-[#E5DDD0] focus:ring-[#875A1E] cursor-pointer"
                     />
-                    <label htmlFor="isUrgent" className="text-xs text-slate-700 cursor-pointer">
+                    <label htmlFor="isUrgent" className="text-xs text-slate-700 cursor-pointer leading-relaxed">
                       <strong className="text-[#111625]">Urgent Production, Remand or Bail Hearing:</strong> Check if this matter requires emergency listing within 24–48 hours.
                     </label>
                   </div>
 
                   {/* Factual Summary */}
                   <div>
-                    <label htmlFor="message" className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">
+                    <label htmlFor="message" className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
                       Factual Summary of the Legal Dispute *
                     </label>
                     <textarea
@@ -388,8 +388,8 @@ export const ConsultationSection: React.FC = () => {
                       required
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className={`w-full px-3.5 py-2.5 text-xs bg-[#FAF8F5] border text-[#111625] focus:outline-none transition-colors ${
-                        errors.message ? 'border-red-600 bg-red-50/20' : 'border-[#DDD4C5] focus:border-[#875A1E] focus:bg-white'
+                      className={`w-full px-4 py-3 text-sm bg-[#FAF8F5] border text-[#111625] focus:outline-none transition-colors ${
+                        errors.message ? 'border-red-600 bg-red-50/20' : 'border-[#E5DDD0] focus:border-[#875A1E] focus:bg-white'
                       }`}
                       placeholder="Please summarize the essential facts, ongoing FIR/complaint details, current stage of proceedings, and specific legal relief sought..."
                     />

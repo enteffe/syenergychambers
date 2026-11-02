@@ -24,11 +24,11 @@ export const Footer: React.FC<FooterProps> = ({
   };
 
   return (
-    <footer className="bg-[#111625] text-slate-300 pt-16 sm:pt-20 pb-12 border-t border-[#2C3652] font-sans">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="bg-[#111625] text-slate-300 pt-24 sm:pt-28 pb-16 border-t border-[#222B42] font-sans">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         
-        {/* Main Colophon Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 sm:gap-12 pb-14 border-b border-[#2C3652]">
+        {/* Main Colophon Layout with Generous Column Margins */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 sm:gap-16 pb-16 border-b border-[#222B42]">
           
           {/* Column 1: Chamber Imprint & Address */}
           <div className="lg:col-span-4 space-y-5">

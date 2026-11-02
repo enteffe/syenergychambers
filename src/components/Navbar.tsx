@@ -32,21 +32,21 @@ export const Navbar: React.FC<NavbarProps> = ({
   const [practiceDropdownOpen, setPracticeDropdownOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-[#FAF8F5] border-b border-[#E9E2D8] transition-colors">
+    <header className="sticky top-0 z-40 w-full bg-[#FAF8F5]/95 backdrop-blur-md border-b border-[#E5DDD0] transition-colors">
       
       {/* Top Ledger Strip (Archival Gazette Style) */}
-      <div className="bg-[#111625] text-[#FAF8F5] text-[11px] py-1.5 px-4 sm:px-6 lg:px-8 border-b border-[#1E263D]">
+      <div className="bg-[#111625] text-[#FAF8F5] text-[11px] py-2 px-6 sm:px-8 lg:px-12 border-b border-[#222B42]">
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 font-sans">
           
           <div className="flex items-center gap-6">
-            <span className="flex items-center gap-1.5 text-slate-300">
-              <span className="text-[#B8863A] font-serif font-bold">Chamber No. 238</span>
-              <span className="text-slate-500">•</span>
+            <span className="flex items-center gap-2 text-slate-300">
+              <span className="text-[#C79C5A] font-serif font-bold">Chamber No. 238</span>
+              <span className="text-slate-600">•</span>
               <span>Patiala House Courts, New Delhi</span>
             </span>
-            <span className="hidden md:flex items-center gap-1 text-slate-400">
+            <span className="hidden md:flex items-center gap-1.5 text-slate-400">
               <span>Registry:</span>
-              <a href={`mailto:${FIRM_DETAILS.email}`} className="text-[#B8863A] hover:underline">
+              <a href={`mailto:${FIRM_DETAILS.email}`} className="text-[#C79C5A] hover:underline">
                 {FIRM_DETAILS.email}
               </a>
             </span>
@@ -54,25 +54,25 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           {/* Accessibility & Urgency Notice */}
           <div className="flex items-center gap-4">
-            <div className="flex items-center gap-1 bg-white/5 px-2 py-0.5 rounded border border-white/10 text-[10px]">
-              <span className="text-[#B8863A] uppercase tracking-wider font-semibold mr-1">Scale:</span>
+            <div className="flex items-center gap-1 bg-white/5 px-2.5 py-0.5 rounded border border-white/10 text-[10px]">
+              <span className="text-[#C79C5A] uppercase tracking-wider font-semibold mr-1">Scale:</span>
               <button
                 onClick={() => onChangeTextSize('sm')}
-                className={`px-1 rounded ${textSize === 'sm' ? 'text-[#B8863A] font-bold underline' : 'text-slate-400 hover:text-white'}`}
+                className={`px-1 rounded ${textSize === 'sm' ? 'text-[#C79C5A] font-bold underline' : 'text-slate-400 hover:text-white'}`}
                 aria-label="Decrease text size"
               >
                 A-
               </button>
               <button
                 onClick={() => onChangeTextSize('md')}
-                className={`px-1 rounded ${textSize === 'md' ? 'text-[#B8863A] font-bold underline' : 'text-slate-400 hover:text-white'}`}
+                className={`px-1 rounded ${textSize === 'md' ? 'text-[#C79C5A] font-bold underline' : 'text-slate-400 hover:text-white'}`}
                 aria-label="Default text size"
               >
                 A
               </button>
               <button
                 onClick={() => onChangeTextSize('lg')}
-                className={`px-1 rounded ${textSize === 'lg' ? 'text-[#B8863A] font-bold underline' : 'text-slate-400 hover:text-white'}`}
+                className={`px-1 rounded ${textSize === 'lg' ? 'text-[#C79C5A] font-bold underline' : 'text-slate-400 hover:text-white'}`}
                 aria-label="Increase text size"
               >
                 A+
@@ -81,7 +81,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             <button
               onClick={onToggleHighContrast}
-              className="hidden sm:inline-block px-2 py-0.5 text-[10px] text-slate-400 hover:text-white border border-white/10 rounded cursor-pointer"
+              className="hidden sm:inline-block px-2.5 py-0.5 text-[10px] text-slate-400 hover:text-white border border-white/10 rounded cursor-pointer"
               aria-label="Toggle high contrast"
             >
               {isHighContrast ? 'Normal' : 'High Contrast'}
@@ -93,9 +93,9 @@ export const Navbar: React.FC<NavbarProps> = ({
                 e.preventDefault();
                 onOpenConsultation();
               }}
-              className="text-[#B8863A] hover:text-[#D4AA6A] font-semibold text-[11px] uppercase tracking-wider flex items-center gap-1"
+              className="text-[#C79C5A] hover:text-[#D4AA6A] font-semibold text-[11px] uppercase tracking-wider flex items-center gap-1.5"
             >
-              <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#B8863A] animate-pulse" />
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#C79C5A] animate-pulse" />
               <span>Urgent Remand Briefing</span>
             </a>
           </div>
@@ -104,15 +104,15 @@ export const Navbar: React.FC<NavbarProps> = ({
       </div>
 
       {/* Main Folio Header */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="flex items-center justify-between h-22">
           
           {/* Monumental Wordmark */}
           <a href="#" className="flex items-baseline gap-3 group focus:outline-none">
             <span className="font-title text-2xl sm:text-[26px] font-bold tracking-[0.08em] text-[#111625] block leading-none">
               SYNERGY <span className="text-[#875A1E] font-normal">CHAMBERS</span>
             </span>
-            <span className="hidden sm:inline-block text-[10px] font-sans font-semibold uppercase tracking-[0.25em] text-[#875A1E] pl-2 border-l border-[#DDD4C5]">
+            <span className="hidden sm:inline-block text-[10px] font-sans font-semibold uppercase tracking-[0.25em] text-[#875A1E] pl-2 border-l border-[#E5DDD0]">
               Advocates &amp; Solicitors
             </span>
           </a>
