@@ -1,132 +1,103 @@
 import React from 'react';
-import { Landmark, ArrowRight, ShieldCheck, Scale, CheckCircle2 } from 'lucide-react';
-import { FIRM_DETAILS } from '../data/firmData';
+import { ArrowRight, Scale, Landmark, ShieldCheck } from 'lucide-react';
 
 export const AboutFirm: React.FC = () => {
   return (
-    <section id="about" className="py-20 lg:py-28 bg-white border-b border-slate-100">
+    <section id="about" className="bg-[#FAF8F5] py-20 lg:py-28 border-b border-[#DDD4C5]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        
+        {/* Editorial Section Header */}
+        <div className="mb-14">
+          <span className="font-title text-xs tracking-[0.25em] text-[#875A1E] uppercase block mb-2">
+            Institutional Profile // Est. New Delhi
+          </span>
+          <h2 className="font-display text-4xl sm:text-5xl lg:text-[54px] font-normal text-[#111625] leading-tight max-w-4xl text-balance">
+            Litigation is not an exercise in theory. It is decided in the crucible of courtroom advocacy.
+          </h2>
+        </div>
+
+        {/* Asymmetrical Broadsheet Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
-          {/* Left Column: Advocate Portrait in Rounded Card with Floating Chamber Badge */}
-          <div className="lg:col-span-5 flex justify-center lg:justify-end">
-            <div className="relative max-w-md w-full">
-              <div className="overflow-hidden rounded-[15px] shadow-[0_12px_36px_rgba(0,0,0,0.12)] border border-slate-200/80 bg-slate-900">
-                <img
-                  src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&q=80&w=1200"
-                  alt="Synergy Chambers Advocacy"
-                  className="w-full h-[460px] sm:h-[520px] object-cover object-top hover:scale-105 transition-transform duration-700"
-                  loading="lazy"
-                />
-              </div>
-
-              {/* Refined Gold Floating Badge */}
-              <div className="absolute -bottom-5 -left-5 bg-[#283361] text-white p-4 sm:p-5 rounded-xl shadow-xl border border-[#CDB091]/30 hidden sm:flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-[#CDB091]">
-                  <Landmark className="w-5 h-5" />
-                </div>
-                <div>
-                  <span className="text-base font-bold text-white block leading-tight font-serif">
-                    Chamber 238
-                  </span>
-                  <span className="text-[11px] text-[#CDB091] font-medium uppercase tracking-wider">
-                    Patiala House Courts, New Delhi
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Column: Scannable Copy with Clear Subsections */}
-          <div className="lg:col-span-7 lg:ps-4 space-y-6">
+          {/* Left Column: Narrative Dossier & Courtroom Philosophy */}
+          <div className="lg:col-span-7 space-y-6">
             
-            <div>
-              <p className="text-[#CDB091] font-extrabold text-xs sm:text-sm uppercase tracking-[2px] mb-1.5">
-                Institutional Profile
-              </p>
-              <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] font-normal text-[#283361] leading-tight">
-                Synergy Chambers
-              </h2>
-            </div>
-
-            <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-normal">
-              A New Delhi litigation and regulatory practice focused on high-stakes criminal trials, agency investigations, and complex commercial disputes.
+            <p className="font-reading text-xl text-[#111625] leading-relaxed font-normal">
+              At Synergy Chambers, we reject passive representation. Modern white-collar litigation, special statutory trials, and complex commercial disputes demand relentless evidentiary analysis, forensic cross-examination, and commanding courtroom presence.
             </p>
 
-            {/* 3 Structured Pillars (Scannable, Easy-to-read) */}
-            <div className="space-y-4 pt-1">
-              <div className="p-4 rounded-xl bg-slate-50 border border-slate-100 flex items-start gap-3.5">
-                <div className="w-8 h-8 rounded-lg bg-[#283361] text-[#CDB091] flex items-center justify-center shrink-0 mt-0.5">
-                  <Landmark className="w-4 h-4" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-sm text-[#283361] mb-0.5">
-                    Trial-First Heritage at Patiala House Courts
-                  </h4>
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                    Located at Chamber 238 at the heart of New Delhi's trial judiciary — facilitating immediate intervention for remand hearings, bail listings, and evidentiary trials.
-                  </p>
-                </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-4 border-t border-[#DDD4C5]">
+              <div className="space-y-2">
+                <span className="font-title text-xs font-bold uppercase tracking-[0.15em] text-[#875A1E] block">
+                  I. Patiala House Chambers
+                </span>
+                <p className="font-reading text-sm text-slate-700 leading-relaxed">
+                  Operating directly from Chamber No. 238 within the historic Patiala House Courts complex puts our counsel at the center of the capital’s trial jurisprudence. This location ensures immediate attendance for urgent remand proceedings, bail hearings, and ongoing trial sessions.
+                </p>
               </div>
 
-              <div className="p-4 rounded-xl bg-slate-50 border border-slate-100 flex items-start gap-3.5">
-                <div className="w-8 h-8 rounded-lg bg-[#283361] text-[#CDB091] flex items-center justify-center shrink-0 mt-0.5">
-                  <ShieldCheck className="w-4 h-4" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-sm text-[#283361] mb-0.5">
-                    Former Agency &amp; Prosecutorial Acumen
-                  </h4>
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                    Rare procedural insight derived from extensive experience assisting Special Prosecutors in matters under PMLA, NDPS, PC Act, SFIO, and CBIC.
-                  </p>
-                </div>
-              </div>
-
-              <div className="p-4 rounded-xl bg-slate-50 border border-slate-100 flex items-start gap-3.5">
-                <div className="w-8 h-8 rounded-lg bg-[#283361] text-[#CDB091] flex items-center justify-center shrink-0 mt-0.5">
-                  <Scale className="w-4 h-4" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-sm text-[#283361] mb-0.5">
-                    Multi-Forum Courtroom Corridor
-                  </h4>
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                    Seamless arguing counsel presence across Delhi District Courts, Delhi High Court, Punjab &amp; Haryana High Court at Chandigarh, and specialized tribunals.
-                  </p>
-                </div>
+              <div className="space-y-2">
+                <span className="font-title text-xs font-bold uppercase tracking-[0.15em] text-[#875A1E] block">
+                  II. Agency &amp; Trial Pedigree
+                </span>
+                <p className="font-reading text-sm text-slate-700 leading-relaxed">
+                  With substantial tenure assisting Special Prosecutors for the Enforcement Directorate (ED), Narcotics Control Bureau (NCB), and SFIO, our counsel understand the investigative architectures and procedural nuances of central agencies.
+                </p>
               </div>
             </div>
 
-            {/* Core Practice Principles (Checkmarks) */}
-            <div className="pt-2 flex flex-wrap gap-x-6 gap-y-2 text-xs font-semibold text-slate-700">
-              <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-[#CDB091]" />
-                Direct Arguing Counsel
+            {/* Direct Arguing Counsel Callout */}
+            <div className="p-6 bg-[#F4EFEB] border-l-2 border-[#875A1E] space-y-2 mt-4 font-sans">
+              <span className="font-title text-xs uppercase tracking-wider text-[#111625] font-bold block">
+                Direct Arguing Counsel Protocol
               </span>
-              <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-[#CDB091]" />
-                Strict Evidence Act Privilege
-              </span>
-              <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-[#CDB091]" />
-                Zero Associate Layering
-              </span>
+              <p className="text-xs text-slate-700 leading-relaxed font-normal">
+                Our clients interface directly with the advocates who draft the pleadings and argue before the bench. We do not operate associate layers or delegate critical courtroom arguments.
+              </p>
             </div>
 
             <div className="pt-2">
               <a
                 href="#team"
-                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#283361] hover:text-[#CDB091] transition-colors"
+                className="inline-flex items-center gap-2 text-xs font-sans font-bold uppercase tracking-[0.16em] text-[#875A1E] hover:text-[#111625] transition-colors"
               >
-                <span>View Counsel Directory</span>
-                <ArrowRight className="w-4 h-4 text-[#CDB091]" />
+                <span>Read Counsel Curricula Vitae</span>
+                <ArrowRight className="w-4 h-4 text-[#875A1E]" />
               </a>
             </div>
 
           </div>
 
+          {/* Right Column: Physical Chamber Photograph & Gazette Artifact */}
+          <div className="lg:col-span-5 space-y-6">
+            <div className="border border-[#DDD4C5] p-3 bg-white shadow-folio">
+              <div className="overflow-hidden bg-[#111625] relative">
+                <img
+                  src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&q=80&w=1200"
+                  alt="Synergy Chambers Advocacy Session"
+                  className="w-full h-[400px] sm:h-[460px] object-cover object-top filter grayscale contrast-110 hover:grayscale-0 transition-all duration-700"
+                  loading="lazy"
+                />
+              </div>
+              <div className="pt-3 pb-1 px-1 flex items-center justify-between text-[11px] font-sans text-slate-500">
+                <span>Chamber No. 238 Consultation</span>
+                <span className="font-title text-[#875A1E] uppercase">Patiala House Courts</span>
+              </div>
+            </div>
+
+            {/* Statutory Corridor Note */}
+            <div className="p-5 border border-[#DDD4C5] bg-[#FAF8F5] font-sans text-xs space-y-2">
+              <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#875A1E] block">
+                Regional Jurisdictional Corridor
+              </span>
+              <p className="text-slate-600 leading-relaxed font-normal">
+                Continuous representation connecting the Supreme Court of India and Delhi trial benches with the High Court of Punjab &amp; Haryana at Chandigarh, CAT, AFT, and District Sessions Courts across Haryana.
+              </p>
+            </div>
+          </div>
+
         </div>
+
       </div>
     </section>
   );

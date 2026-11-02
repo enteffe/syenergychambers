@@ -31,32 +31,32 @@ export const PracticeModal: React.FC<PracticeModalProps> = ({
 
   return (
     <div 
-      className="fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-xs flex items-center justify-center p-4 sm:p-6"
+      className="fixed inset-0 z-50 overflow-y-auto bg-[#111625]/75 flex items-center justify-center p-4 sm:p-6"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
     >
       <div 
-        className="bg-white rounded-[15px] max-w-3xl w-full max-h-[85vh] flex flex-col shadow-[0_10px_50px_rgba(0,0,0,0.3)] animate-modal-in overflow-hidden"
+        className="bg-[#FAF8F5] border border-[#DDD4C5] w-full max-w-3xl max-h-[88vh] flex flex-col shadow-docket animate-modal-in overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header Bar */}
-        <div className="bg-[#283361] text-white p-6 sm:p-8 flex items-start justify-between shrink-0">
+        <div className="bg-[#111625] text-white p-6 sm:p-8 flex items-start justify-between shrink-0">
           <div>
-            <div className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[2px] text-[#CDB091] font-bold mb-1.5">
+            <div className="inline-flex items-center gap-2 font-title text-[11px] uppercase tracking-[0.2em] text-[#C79C5A] font-bold mb-1.5">
               <Scale className="w-3.5 h-3.5" />
-              <span>Chambers Practice Domain</span>
+              <span>Chamber Practice Dossier</span>
             </div>
-            <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white">
+            <h3 className="font-display text-2xl sm:text-3xl font-normal text-white">
               {practice.title}
             </h3>
-            <p className="text-xs sm:text-sm text-slate-300 font-medium mt-1">
+            <p className="font-mono text-xs text-slate-300 tracking-wider mt-1">
               {practice.subtitle}
             </p>
           </div>
           <button
             onClick={onClose}
-            className="p-2 rounded-lg bg-white/10 hover:bg-white/20 text-white transition-colors cursor-pointer"
+            className="p-2 text-slate-400 hover:text-white transition-colors cursor-pointer"
             aria-label="Close practice modal"
           >
             <X className="w-5 h-5" />
@@ -64,31 +64,31 @@ export const PracticeModal: React.FC<PracticeModalProps> = ({
         </div>
 
         {/* Modal Body */}
-        <div className="p-6 sm:p-8 space-y-6 flex-1 overflow-y-auto text-slate-800">
+        <div className="p-6 sm:p-8 space-y-6 flex-1 overflow-y-auto text-slate-800 font-sans">
           
           {/* Statutory Overview */}
           <div>
-            <span className="text-xs font-bold uppercase tracking-wider text-[#283361] block mb-2">
+            <span className="font-title text-xs font-bold uppercase tracking-wider text-[#111625] block mb-2">
               Jurisprudential Framework &amp; Scope
             </span>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+            <p className="font-reading text-base text-slate-700 leading-relaxed font-normal">
               {practice.fullDesc}
             </p>
           </div>
 
           {/* Scope of Legal Services */}
           <div>
-            <span className="text-xs font-bold uppercase tracking-wider text-[#283361] block mb-3">
-              Key Procedural &amp; Litigation Actions
+            <span className="font-title text-xs font-bold uppercase tracking-wider text-[#111625] block mb-3">
+              Core Procedural &amp; Courtroom Mandates
             </span>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
               {practice.keyServices.map((service, idx) => (
                 <div 
                   key={idx}
-                  className="p-3 bg-slate-50 border border-slate-200 rounded-lg text-xs text-slate-700 flex items-start gap-2.5"
+                  className="p-3 bg-white border border-[#DDD4C5] text-xs text-slate-800 flex items-start gap-2.5 shadow-xs"
                 >
-                  <Check className="w-3.5 h-3.5 text-[#CDB091] shrink-0 mt-0.5" />
-                  <span className="leading-snug">{service}</span>
+                  <Check className="w-3.5 h-3.5 text-[#875A1E] shrink-0 mt-0.5" />
+                  <span className="leading-snug font-medium">{service}</span>
                 </div>
               ))}
             </div>
@@ -96,14 +96,14 @@ export const PracticeModal: React.FC<PracticeModalProps> = ({
 
           {/* Court Representation */}
           <div>
-            <span className="text-xs font-bold uppercase tracking-wider text-[#283361] block mb-2">
-              Courts &amp; Appearance Forums
+            <span className="font-title text-xs font-bold uppercase tracking-wider text-[#111625] block mb-2">
+              Appearance Benches &amp; Tribunals
             </span>
             <div className="flex flex-wrap gap-2">
               {practice.courtRepresentation.map((court, idx) => (
                 <span 
                   key={idx}
-                  className="px-3 py-1 text-xs bg-slate-100 border border-slate-200 text-[#283361] rounded-full font-medium"
+                  className="px-3 py-1 text-xs bg-[#F4EFEB] border border-[#DDD4C5] text-[#111625] font-medium"
                 >
                   {court}
                 </span>
@@ -114,7 +114,7 @@ export const PracticeModal: React.FC<PracticeModalProps> = ({
         </div>
 
         {/* Footer Actions */}
-        <div className="bg-slate-50 p-5 sm:p-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4 shrink-0">
+        <div className="bg-white p-5 sm:p-6 border-t border-[#DDD4C5] flex flex-col sm:flex-row items-center justify-between gap-4 shrink-0 font-sans">
           <span className="text-xs text-slate-500 italic text-center sm:text-left">
             Consultations governed by Bar Council of India regulations.
           </span>
@@ -130,10 +130,10 @@ export const PracticeModal: React.FC<PracticeModalProps> = ({
                 onClose();
                 onOpenConsultation();
               }}
-              className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-[#283361] hover:bg-[#1c2445] text-[#CDB091] text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer"
+              className="inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-[#111625] hover:bg-[#875A1E] text-[#FAF8F5] text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer"
             >
-              <span>Consult on This Matter</span>
-              <ArrowRight className="w-3.5 h-3.5 text-[#CDB091]" />
+              <span>Schedule Briefing on This Matter</span>
+              <ArrowRight className="w-3.5 h-3.5 text-[#C79C5A]" />
             </button>
           </div>
         </div>

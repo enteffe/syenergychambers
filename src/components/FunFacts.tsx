@@ -1,120 +1,106 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { Gavel, UserCheck, Scale, Award } from 'lucide-react';
+import React from 'react';
+import { Scale, Gavel, Landmark, FileText } from 'lucide-react';
 
 export const FunFacts: React.FC = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const [counts, setCounts] = useState({ years: 0, matters: 0 });
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.3 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    if (!isVisible) return;
-
-    const duration = 1800;
-    const startTime = performance.now();
-
-    const animate = (currentTime: number) => {
-      const elapsed = currentTime - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      
-      // easeOutQuart
-      const ease = 1 - Math.pow(1 - progress, 4);
-
-      setCounts({
-        years: Math.round(ease * 25),
-        matters: Math.round(ease * 700)
-      });
-
-      if (progress < 1) {
-        requestAnimationFrame(animate);
-      }
-    };
-
-    requestAnimationFrame(animate);
-  }, [isVisible]);
-
   return (
-    <section ref={sectionRef} className="relative z-20 -mt-8 sm:-mt-12 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="bg-white rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,0.06)] border border-slate-200/80 p-6 sm:p-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4 divide-y sm:divide-y-0 sm:divide-x divide-slate-100 text-center">
+    <section className="bg-[#FAF8F5] border-b border-[#DDD4C5] py-16 lg:py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Asymmetrical Ledger: Left Anchor + Right Data Rows */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
-          {/* Stat 1: 25+ Years */}
-          <div className="flex flex-col items-center justify-center p-3">
-            <div className="h-14 flex items-center justify-center mb-1">
-              <span className="font-serif text-4xl sm:text-5xl font-bold text-[#CDB091] tracking-tight">
-                {counts.years}+
+          {/* Left Column: Visual Anchor (Monumental Metric) */}
+          <div className="lg:col-span-5 space-y-4">
+            <span className="font-title text-xs uppercase tracking-[0.2em] text-[#875A1E] block">
+              Cumulative Trial Heritage
+            </span>
+            <div className="flex items-baseline gap-3">
+              <span className="font-display text-6xl sm:text-7xl font-normal text-[#111625] leading-none">
+                25+
+              </span>
+              <span className="font-title text-xl text-[#875A1E] tracking-wider uppercase font-semibold">
+                Years
               </span>
             </div>
-            <p className="text-sm font-bold text-[#283361] leading-snug">
-              Years of Combined Trial Practice
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#111625] leading-snug">
+              Trial depth across Special Statutes, Agency Inquiries &amp; Appellate Benches.
+            </h2>
+            <p className="font-reading text-base text-slate-600 leading-relaxed">
+              Litigation experience forged in high-stakes criminal proceedings, agency prosecutions, commercial arbitrations, and constitutional challenges before superior courts.
             </p>
-            <span className="text-[11px] text-slate-500 mt-1">
-              High-stakes criminal &amp; commercial litigation
-            </span>
           </div>
 
-          {/* Stat 2: Supreme & High Courts Gavel */}
-          <div className="flex flex-col items-center justify-center p-3">
-            <div className="h-14 flex items-center justify-center mb-1">
-              <div className="w-12 h-12 rounded-full bg-[#fdfaf6] border border-[#CDB091]/20 flex items-center justify-center text-[#CDB091]">
-                <Gavel className="w-6 h-6" />
+          {/* Right Column: High-Density Cause-Ledger Table */}
+          <div className="lg:col-span-7 divide-y divide-[#DDD4C5] border-t border-b border-[#DDD4C5] font-sans">
+            
+            <div className="py-5 flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
+              <div className="sm:w-1/3">
+                <span className="font-title text-xs font-bold uppercase tracking-[0.14em] text-[#111625] block">
+                  Superior Forums
+                </span>
+                <span className="text-[11px] text-[#875A1E] uppercase tracking-wider">
+                  Appellate Jurisprudence
+                </span>
+              </div>
+              <div className="sm:w-2/3">
+                <p className="text-sm font-reading text-slate-700 leading-relaxed">
+                  Regular appearances before the Supreme Court of India, Delhi High Court, and Punjab &amp; Haryana High Court in appeals, revisions, and writ petitions.
+                </p>
               </div>
             </div>
-            <p className="text-sm font-bold text-[#283361] leading-snug">
-              Supreme Court &amp; High Courts
-            </p>
-            <span className="text-[11px] text-slate-500 mt-1">
-              Trial, writ &amp; appellate representation
-            </span>
-          </div>
 
-          {/* Stat 3: 700+ Matters */}
-          <div className="flex flex-col items-center justify-center p-3">
-            <div className="h-14 flex items-center justify-center mb-1">
-              <span className="font-serif text-4xl sm:text-5xl font-bold text-[#CDB091] tracking-tight">
-                {counts.matters}+
-              </span>
-            </div>
-            <p className="text-sm font-bold text-[#283361] leading-snug">
-              Complex Matters Handled
-            </p>
-            <span className="text-[11px] text-slate-500 mt-1">
-              Special courts, remand, trials &amp; appeals
-            </span>
-          </div>
-
-          {/* Stat 4: Former Special Public Prosecutors */}
-          <div className="flex flex-col items-center justify-center p-3">
-            <div className="h-14 flex items-center justify-center mb-1">
-              <div className="w-12 h-12 rounded-full bg-[#fdfaf6] border border-[#CDB091]/20 flex items-center justify-center text-[#CDB091]">
-                <UserCheck className="w-6 h-6" />
+            <div className="py-5 flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
+              <div className="sm:w-1/3">
+                <span className="font-title text-xs font-bold uppercase tracking-[0.14em] text-[#111625] block">
+                  700+ Matters
+                </span>
+                <span className="text-[11px] text-[#875A1E] uppercase tracking-wider">
+                  Docketed &amp; Argued
+                </span>
+              </div>
+              <div className="sm:w-2/3">
+                <p className="text-sm font-reading text-slate-700 leading-relaxed">
+                  Extensive trial representation in complex white-collar crimes, PMLA proceedings, NDPS trials, POCSO special courts, and high-value contractual disputes.
+                </p>
               </div>
             </div>
-            <p className="text-sm font-bold text-[#283361] leading-snug">
-              Former Special Prosecutors
-            </p>
-            <span className="text-[11px] text-slate-500 mt-1">
-              ED, NCB, SFIO &amp; central agency acumen
-            </span>
+
+            <div className="py-5 flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
+              <div className="sm:w-1/3">
+                <span className="font-title text-xs font-bold uppercase tracking-[0.14em] text-[#111625] block">
+                  Central Agency Pedigree
+                </span>
+                <span className="text-[11px] text-[#875A1E] uppercase tracking-wider">
+                  Prosecutorial Acumen
+                </span>
+              </div>
+              <div className="sm:w-2/3">
+                <p className="text-sm font-reading text-slate-700 leading-relaxed">
+                  Firsthand experience assisting Special Public Prosecutors for the Narcotics Control Bureau (NCB), Enforcement Directorate (ED), SFIO, and CBIC.
+                </p>
+              </div>
+            </div>
+
+            <div className="py-5 flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
+              <div className="sm:w-1/3">
+                <span className="font-title text-xs font-bold uppercase tracking-[0.14em] text-[#111625] block">
+                  Patiala House Chamber 238
+                </span>
+                <span className="text-[11px] text-[#875A1E] uppercase tracking-wider">
+                  Physical Courtroom Base
+                </span>
+              </div>
+              <div className="sm:w-2/3">
+                <p className="text-sm font-reading text-slate-700 leading-relaxed">
+                  Permanent trial chambers situated in the Patiala House Courts complex, enabling immediate attendance for remand hearings and urgent listing motions.
+                </p>
+              </div>
+            </div>
+
           </div>
 
         </div>
+
       </div>
     </section>
   );

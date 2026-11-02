@@ -1,102 +1,75 @@
 import React from 'react';
-import { 
-  ShieldCheck, 
-  Scale, 
-  Gavel, 
-  Lock, 
-  UserCheck, 
-  MapPin 
-} from 'lucide-react';
+import { Scale, Gavel, Shield, Lock, MapPin, UserCheck } from 'lucide-react';
 
 export const WhyUs: React.FC = () => {
-  const pillars = [
+  const canons = [
     {
-      num: '01',
-      title: "High-Stakes Litigation Focus",
-      desc: "Concentrated trial and appellate practice tailored to complex criminal, white-collar, and commercial litigation.",
-      icon: Scale
+      num: 'CANON I',
+      title: 'High-Stakes Trial Specialization',
+      text: 'Our practice is strictly focused on contentious, high-exposure litigation: economic offenses, central agency investigations, commercial arbitration, and superior court appeals.'
     },
     {
-      num: '02',
-      title: "Extensive Courtroom Appearances",
-      desc: "Arguing counsel presence before the Supreme Court of India, Delhi High Court, and Punjab & Haryana High Court.",
-      icon: Gavel
+      num: 'CANON II',
+      title: 'Superior Court & Appellate Pedigree',
+      text: 'Seasoned arguing counsel regularly appearing before the Supreme Court of India, Delhi High Court, and Punjab & Haryana High Court across writs, appeals, and special leave petitions.'
     },
     {
-      num: '03',
-      title: "Former Public Prosecutors",
-      desc: "Procedural acumen gained from representing the Enforcement Directorate (ED), NCB, SFIO, and CBIC in complex trials.",
-      icon: UserCheck
+      num: 'CANON III',
+      title: 'Prosecutorial & Central Agency Acumen',
+      text: 'Prior tenure assisting Special Public Prosecutors for the Narcotics Control Bureau (NCB), Enforcement Directorate (ED), and SFIO provides direct insight into prosecutorial mechanisms.'
     },
     {
-      num: '04',
-      title: "Discreet & Confidential Counsel",
-      desc: "Sensitive advisory protected under statutory attorney-client privilege pursuant to Sections 126–129, Indian Evidence Act.",
-      icon: Lock
+      num: 'CANON IV',
+      title: 'Statutory Attorney-Client Privilege',
+      text: 'Every mandate, factual brief, and sensitive communication is guarded under strict statutory privilege pursuant to Sections 126–129 of the Indian Evidence Act, 1872.'
     },
     {
-      num: '05',
-      title: "Partner-Led Engagements",
-      desc: "Every mandate is managed directly by senior counsel — from evidentiary discovery and pleadings to final arguments.",
-      icon: ShieldCheck
+      num: 'CANON V',
+      title: 'Direct Partner-Led Arguments',
+      text: 'We do not operate associate layers or delegate courtroom appearances. The counsel who formulate your trial strategy and draft the pleadings will argue before the bench.'
     },
     {
-      num: '06',
-      title: "Chambers 238 & Regional Corridors",
-      desc: "Direct base at Patiala House Courts in New Delhi with dedicated regional teams active across Chandigarh and Haryana.",
-      icon: MapPin
+      num: 'CANON VI',
+      title: 'Patiala House Base & Regional Corridors',
+      text: 'Permanent chambers at Chamber 238, Patiala House Courts, combined with seamless representation corridors across Chandigarh and Haryana.'
     }
   ];
 
   return (
-    <section id="why-us" className="py-20 lg:py-28 bg-[#1e274a] text-white relative overflow-hidden">
-      
-      {/* Background Subtle Accent */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#18203f] via-[#1e274a] to-[#141b36] opacity-90" />
-      
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="why-us" className="bg-[#111625] text-[#FAF8F5] py-20 lg:py-28 border-b border-[#2C3652]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <p className="text-[#CDB091] font-extrabold text-xs sm:text-sm uppercase tracking-[2px] mb-2">
-            Distinctive Advantage
-          </p>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] font-normal text-white tracking-tight">
-            Why Synergy Chambers
+        <div className="max-w-3xl mb-16">
+          <span className="font-title text-xs tracking-[0.25em] text-[#C79C5A] uppercase block mb-2">
+            Institutional Standards // Chamber Canons
+          </span>
+          <h2 className="font-display text-4xl sm:text-5xl lg:text-[54px] font-normal text-[#FAF8F5] leading-tight">
+            Principles forged in high-stakes courtroom contest.
           </h2>
-          <div className="w-14 h-0.5 bg-[#CDB091] mx-auto mt-4" />
+          <p className="font-reading text-lg text-slate-300 mt-4 leading-relaxed">
+            Legal disputes of consequence require relentless trial preparation, institutional ethics, and strategic clarity.
+          </p>
         </div>
 
-        {/* 6-Grid Pillars */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {pillars.map((item) => {
-            const Icon = item.icon;
-            return (
-              <div 
-                key={item.num}
-                className="bg-white/[0.04] border border-white/10 hover:border-[#CDB091]/60 rounded-2xl p-7 sm:p-8 transition-all duration-300 hover:bg-white/[0.07] hover:-translate-y-1 relative group flex flex-col justify-between"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="w-12 h-12 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center text-[#CDB091] group-hover:scale-110 group-hover:bg-[#CDB091] group-hover:text-[#18203f] transition-all">
-                      <Icon className="w-6 h-6" />
-                    </div>
-                    <span className="font-mono text-sm font-bold text-[#CDB091]/70">
-                      {item.num}
-                    </span>
-                  </div>
-                  
-                  <h3 className="font-serif text-xl font-bold text-white group-hover:text-[#CDB091] transition-colors leading-snug mb-3">
-                    {item.title}
-                  </h3>
-                  
-                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
-                    {item.desc}
-                  </p>
-                </div>
-              </div>
-            );
-          })}
+        {/* Gazette Canons (Editorial Asymmetric Split Grid) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
+          {canons.map((canon) => (
+            <div 
+              key={canon.num}
+              className="border-t border-[#2C3652] pt-6 space-y-3"
+            >
+              <span className="font-title text-[11px] font-bold text-[#C79C5A] tracking-[0.2em] block">
+                {canon.num}
+              </span>
+              <h3 className="font-display text-2xl text-white font-normal leading-snug">
+                {canon.title}
+              </h3>
+              <p className="font-reading text-sm text-slate-300 leading-relaxed font-normal">
+                {canon.text}
+              </p>
+            </div>
+          ))}
         </div>
 
       </div>

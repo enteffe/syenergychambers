@@ -4,10 +4,6 @@ import {
   MapPin, 
   Mail, 
   Phone, 
-  Linkedin, 
-  Twitter, 
-  Facebook, 
-  Instagram,
   ArrowUp
 } from 'lucide-react';
 import { FIRM_DETAILS, PRACTICE_AREAS } from '../data/firmData';
@@ -28,202 +24,169 @@ export const Footer: React.FC<FooterProps> = ({
   };
 
   return (
-    <footer className="bg-[#12172d] text-slate-300 pt-16 sm:pt-20 pb-12 border-t border-white/10 font-sans">
+    <footer className="bg-[#111625] text-slate-300 pt-16 sm:pt-20 pb-12 border-t border-[#2C3652] font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Main 4 Columns (Directly matches K&R Legal .wpo-site-footer) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 sm:gap-12 pb-14 border-b border-white/10">
+        {/* Main Colophon Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 sm:gap-12 pb-14 border-b border-[#2C3652]">
           
-          {/* Column 1: Logo & Direct Contacts */}
-          <div className="lg:col-span-4 space-y-6">
-            <div className="flex items-center gap-3.5">
-              <div className="w-11 h-11 rounded-lg bg-[#283361] border border-[#CDB091]/30 flex items-center justify-center text-[#CDB091] shadow-md">
-                <Scale className="w-6 h-6" />
-              </div>
-              <div>
-                <span className="font-serif text-2xl font-bold tracking-tight text-white block">
-                  SYNERGY <span className="text-[#CDB091]">CHAMBERS</span>
-                </span>
-                <span className="text-[10px] tracking-[0.2em] uppercase text-slate-400 font-semibold block">
-                  Advocates &amp; Solicitors
-                </span>
-              </div>
+          {/* Column 1: Chamber Imprint & Address */}
+          <div className="lg:col-span-4 space-y-5">
+            <div>
+              <span className="font-title text-2xl font-bold tracking-[0.08em] text-[#FAF8F5] block">
+                SYNERGY <span className="text-[#C79C5A] font-normal">CHAMBERS</span>
+              </span>
+              <span className="text-[10px] tracking-[0.25em] uppercase text-slate-400 font-semibold block mt-1">
+                Advocates &amp; Solicitors • Patiala House Courts
+              </span>
             </div>
 
-            <p className="text-xs sm:text-sm text-slate-400 leading-relaxed font-normal">
-              A boutique litigation and advisory practice focused on high-stakes criminal, regulatory, and commercial disputes before the Supreme Court, High Courts, and Special Tribunals.
+            <p className="font-reading text-sm text-slate-300 leading-relaxed font-normal">
+              A boutique litigation and regulatory investigations practice advising corporations, institutions, and individuals before the Supreme Court of India, High Courts, and Special Trial Benches.
             </p>
 
-            <ul className="space-y-3 text-xs sm:text-sm text-slate-300">
-              <li className="flex items-center gap-3">
-                <Mail className="w-4 h-4 text-[#CDB091] shrink-0" />
-                <a href={`mailto:${FIRM_DETAILS.email}`} className="hover:text-[#CDB091] transition-colors">
+            <div className="space-y-2.5 text-xs text-slate-300 pt-2 border-t border-[#1E263D]">
+              <div className="flex items-center gap-3">
+                <Mail className="w-3.5 h-3.5 text-[#C79C5A] shrink-0" />
+                <a href={`mailto:${FIRM_DETAILS.email}`} className="hover:text-[#C79C5A] transition-colors">
                   {FIRM_DETAILS.email}
                 </a>
-              </li>
-              <li className="flex items-center gap-3">
-                <Phone className="w-4 h-4 text-[#CDB091] shrink-0" />
-                <a href={`tel:${FIRM_DETAILS.phone}`} className="hover:text-[#CDB091] transition-colors">
+              </div>
+              <div className="flex items-center gap-3">
+                <Phone className="w-3.5 h-3.5 text-[#C79C5A] shrink-0" />
+                <a href={`tel:${FIRM_DETAILS.phone}`} className="hover:text-[#C79C5A] transition-colors">
                   {FIRM_DETAILS.phone}
                 </a>
-              </li>
-              <li className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-[#CDB091] shrink-0 mt-1" />
+              </div>
+              <div className="flex items-start gap-3">
+                <MapPin className="w-3.5 h-3.5 text-[#C79C5A] shrink-0 mt-0.5" />
                 <span>{FIRM_DETAILS.establishedLocation}</span>
-              </li>
-            </ul>
+              </div>
+            </div>
           </div>
 
-          {/* Column 2: Quick Links */}
+          {/* Column 2: Index */}
           <div className="lg:col-span-2 space-y-4">
-            <h4 className="font-serif text-lg font-bold text-white tracking-wide border-b border-white/10 pb-2">
-              Quick Links
+            <h4 className="font-title text-xs font-bold uppercase tracking-[0.18em] text-[#C79C5A] pb-2 border-b border-[#2C3652]">
+              Navigation
             </h4>
-            <ul className="space-y-2.5 text-xs sm:text-sm text-slate-400">
+            <ul className="space-y-2.5 text-xs text-slate-300">
               <li>
-                <a href="#" className="hover:text-[#CDB091] transition-colors block">
-                  Home
+                <a href="#" className="hover:text-[#C79C5A] transition-colors block">
+                  Index
                 </a>
               </li>
               <li>
-                <a href="#about" className="hover:text-[#CDB091] transition-colors block">
-                  About Us
+                <a href="#about" className="hover:text-[#C79C5A] transition-colors block">
+                  Institutional Profile
                 </a>
               </li>
               <li>
-                <a href="#team" className="hover:text-[#CDB091] transition-colors block">
-                  Our Team
+                <a href="#practice-areas" className="hover:text-[#C79C5A] transition-colors block">
+                  Practice Remit
                 </a>
               </li>
               <li>
-                <a href="#industries" className="hover:text-[#CDB091] transition-colors block">
-                  Industries Served
+                <a href="#industries" className="hover:text-[#C79C5A] transition-colors block">
+                  Regulated Sectors
                 </a>
               </li>
               <li>
-                <a href="#why-us" className="hover:text-[#CDB091] transition-colors block">
-                  Why Us
+                <a href="#team" className="hover:text-[#C79C5A] transition-colors block">
+                  Counsel Roster
                 </a>
               </li>
               <li>
-                <a href="#contact" className="hover:text-[#CDB091] transition-colors block">
-                  Contact Us
+                <a href="#why-us" className="hover:text-[#C79C5A] transition-colors block">
+                  Chamber Principles
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Column 3: Practice Areas */}
+          {/* Column 3: Core Practices */}
           <div className="lg:col-span-3 space-y-4">
-            <h4 className="font-serif text-lg font-bold text-white tracking-wide border-b border-white/10 pb-2">
-              Practice Areas
+            <h4 className="font-title text-xs font-bold uppercase tracking-[0.18em] text-[#C79C5A] pb-2 border-b border-[#2C3652]">
+              Special Statutes
             </h4>
-            <ul className="space-y-2.5 text-xs sm:text-sm text-slate-400">
+            <ul className="space-y-2.5 text-xs text-slate-300">
               {PRACTICE_AREAS.slice(0, 5).map((practice) => (
                 <li key={practice.id}>
-                  <a href="#practice-areas" className="hover:text-[#CDB091] transition-colors line-clamp-1 block">
+                  <a href="#practice-areas" className="hover:text-[#C79C5A] transition-colors line-clamp-1 block">
                     {practice.title}
                   </a>
                 </li>
               ))}
               <li>
-                <a href="#practice-areas" className="text-[#CDB091] hover:underline font-semibold text-xs block pt-1">
-                  View All Practice Areas &rarr;
+                <a href="#practice-areas" className="text-[#C79C5A] hover:underline font-semibold text-xs block pt-1">
+                  View All 9 Practice Domains &rarr;
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Column 4: Policies & Notices */}
+          {/* Column 4: Regulatory & Hours */}
           <div className="lg:col-span-3 space-y-4">
-            <h4 className="font-serif text-lg font-bold text-white tracking-wide border-b border-white/10 pb-2">
-              Policies &amp; Notices
+            <h4 className="font-title text-xs font-bold uppercase tracking-[0.18em] text-[#C79C5A] pb-2 border-b border-[#2C3652]">
+              Compliance &amp; Hours
             </h4>
-            <ul className="space-y-2.5 text-xs sm:text-sm text-slate-400">
+            <ul className="space-y-2.5 text-xs text-slate-300">
               <li>
                 <button
                   onClick={onOpenPrivacy}
-                  className="hover:text-[#CDB091] transition-colors text-left cursor-pointer"
+                  className="hover:text-[#C79C5A] transition-colors text-left cursor-pointer"
                 >
-                  Privacy Policy
+                  Client Privilege &amp; Confidentiality Policy
                 </button>
               </li>
               <li>
                 <button
                   onClick={onOpenDisclaimer}
-                  className="hover:text-[#CDB091] transition-colors text-left cursor-pointer"
+                  className="hover:text-[#C79C5A] transition-colors text-left cursor-pointer"
                 >
-                  Bar Council Disclaimer
+                  Bar Council of India Disclaimer
                 </button>
               </li>
             </ul>
 
-            <div className="pt-4 border-t border-white/10 space-y-2">
-              <span className="text-[11px] uppercase tracking-wider text-slate-500 font-bold block">
+            <div className="pt-3 border-t border-[#1E263D] space-y-1 text-xs">
+              <span className="text-[10px] uppercase font-bold tracking-wider text-slate-400 block">
                 Chamber Hours
               </span>
-              <p className="text-xs text-slate-400">
+              <p className="text-slate-300">
                 {FIRM_DETAILS.hours}
+              </p>
+              <p className="text-[11px] text-slate-400 pt-1">
+                Urgent bail listings and remand intervention active 24/7 upon direct verification.
               </p>
             </div>
           </div>
 
         </div>
 
-        {/* Statutory Compliance Notice Box */}
-        <div className="py-6 border-b border-white/10 text-[11px] text-slate-400 leading-relaxed space-y-1">
-          <p className="font-semibold text-slate-300">
-            Regulatory Compliance Notice (Bar Council of India):
+        {/* Regulatory Notice Banner (Bar Council of India) */}
+        <div className="py-6 border-b border-[#2C3652] text-[11px] text-slate-400 leading-relaxed font-sans space-y-1">
+          <p className="font-semibold text-slate-200">
+            Statutory Notice (Bar Council of India Rules):
           </p>
           <p>
-            As per the rules of the Bar Council of India, law firms and advocates are not permitted to solicit work or advertise. The contents of this website are intended solely to provide general information regarding Synergy Chambers and its practice areas upon voluntary inquiry. Nothing on this website constitutes legal advice or creates an advocate-client relationship.
+            This website is maintained strictly in accordance with Rule 36 of the Bar Council of India Rules. The information provided herein is solely for informational purposes upon voluntary user inquiry and does not constitute advertisement, personal communication, solicitation, or legal advice.
           </p>
         </div>
 
-        {/* Secondary Footer (Bottom Bar with Copyright and Social Icons) */}
-        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-slate-500 text-center sm:text-left">
-            &copy; 2026 Synergy Chambers (Advocates &amp; Solicitors). All Rights Reserved.
+        {/* Colophon Bottom Bar */}
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-sans text-slate-400">
+          <p>
+            &copy; 2026 Synergy Chambers (Advocates &amp; Solicitors). Patiala House Courts, New Delhi.
           </p>
 
-          <div className="flex items-center gap-3">
-            <a 
-              href="#" 
-              className="w-9 h-9 rounded-full bg-white/5 hover:bg-[#CDB091] hover:text-[#12172d] flex items-center justify-center text-slate-300 transition-colors"
-              aria-label="LinkedIn"
-            >
-              <Linkedin className="w-4 h-4" />
-            </a>
-            <a 
-              href="#" 
-              className="w-9 h-9 rounded-full bg-white/5 hover:bg-[#CDB091] hover:text-[#12172d] flex items-center justify-center text-slate-300 transition-colors"
-              aria-label="Twitter / X"
-            >
-              <Twitter className="w-4 h-4" />
-            </a>
-            <a 
-              href="#" 
-              className="w-9 h-9 rounded-full bg-white/5 hover:bg-[#CDB091] hover:text-[#12172d] flex items-center justify-center text-slate-300 transition-colors"
-              aria-label="Facebook"
-            >
-              <Facebook className="w-4 h-4" />
-            </a>
-            <a 
-              href="#" 
-              className="w-9 h-9 rounded-full bg-white/5 hover:bg-[#CDB091] hover:text-[#12172d] flex items-center justify-center text-slate-300 transition-colors"
-              aria-label="Instagram"
-            >
-              <Instagram className="w-4 h-4" />
-            </a>
-
-            <button
-              onClick={scrollToTop}
-              className="ml-3 p-2 rounded-lg bg-white/5 hover:bg-white/15 text-slate-400 hover:text-white transition-colors cursor-pointer"
-              aria-label="Scroll to top"
-            >
-              <ArrowUp className="w-4 h-4" />
-            </button>
-          </div>
+          <button
+            onClick={scrollToTop}
+            className="flex items-center gap-1.5 text-slate-400 hover:text-[#C79C5A] transition-colors cursor-pointer uppercase tracking-wider text-[11px] font-semibold"
+          >
+            <span>Top of Folio</span>
+            <ArrowUp className="w-3.5 h-3.5" />
+          </button>
         </div>
 
       </div>

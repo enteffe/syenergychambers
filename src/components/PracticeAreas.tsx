@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Scale, ChevronRight } from 'lucide-react';
+import { ArrowUpRight, Scale, ChevronRight } from 'lucide-react';
 import { PRACTICE_AREAS, PracticeArea } from '../data/firmData';
 
 interface PracticeAreasProps {
@@ -7,71 +7,64 @@ interface PracticeAreasProps {
 }
 
 export const PracticeAreas: React.FC<PracticeAreasProps> = ({ onSelectPractice }) => {
+  const romanNumerals = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX'];
+
   return (
-    <section id="practice-areas" className="py-20 lg:py-28 bg-white border-b border-slate-100">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="practice-areas" className="bg-[#FAF8F5] py-20 lg:py-28 border-b border-[#DDD4C5]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-[#DDD4C5] mb-12">
           <div>
-            <p className="text-[#CDB091] font-extrabold text-xs sm:text-sm uppercase tracking-[2px] mb-2">
-              Practice Domains
-            </p>
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] font-normal text-[#283361] tracking-tight">
-              Our Practice Areas
+            <span className="font-title text-xs tracking-[0.25em] text-[#875A1E] uppercase block mb-2">
+              Practice Remit // Cause Classification
+            </span>
+            <h2 className="font-display text-4xl sm:text-5xl lg:text-[52px] font-normal text-[#111625] tracking-tight">
+              Courtroom Practice Domains
             </h2>
           </div>
-          <p className="text-sm text-slate-500 max-w-md font-normal leading-relaxed">
-            Direct courtroom advocacy across special trial courts, commercial arbitration tribunals, and constitutional writ benches.
+          <p className="font-reading text-base text-slate-600 max-w-md leading-relaxed">
+            Direct trial and appellate advocacy across special statutes, financial crimes, constitutional writs, and commercial arbitration.
           </p>
         </div>
 
-        {/* Service Rows (Polished K&R Legal Style) */}
-        <div className="space-y-3 divide-y divide-slate-100">
-          {PRACTICE_AREAS.map((practice) => (
+        {/* The Judicial Cause-List Ledger */}
+        <div className="divide-y divide-[#DDD4C5] border-b border-[#DDD4C5]">
+          {PRACTICE_AREAS.map((practice, idx) => (
             <div
               key={practice.id}
               onClick={() => onSelectPractice(practice.id)}
-              className="group pt-6 pb-6 cursor-pointer transition-all duration-200 hover:bg-[#fcfbfa] px-3 sm:px-6 rounded-xl border border-transparent hover:border-slate-200/70"
+              className="group py-7 sm:py-8 cursor-pointer transition-all duration-150 hover:bg-[#F4EFEB] px-4 sm:px-6 -mx-4 sm:-mx-6"
             >
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-8 items-baseline">
                 
-                {/* Left Group */}
-                <div className="space-y-2 max-w-3xl">
-                  <div className="flex items-center gap-3">
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#CDB091] px-2.5 py-0.5 rounded-full bg-[#fdfaf6] border border-[#CDB091]/30">
-                      {practice.subtitle}
-                    </span>
-                  </div>
-
-                  <h3 className="font-serif text-xl sm:text-2xl text-[#283361] group-hover:text-[#CDB091] transition-colors leading-snug">
-                    {practice.title}
-                  </h3>
-
-                  <p className="text-sm text-slate-600 leading-relaxed font-normal">
-                    {practice.shortDesc}
-                  </p>
-
-                  {/* Quick Services Preview Badges */}
-                  <div className="flex flex-wrap gap-2 pt-1">
-                    {practice.keyServices.slice(0, 3).map((svc, idx) => (
-                      <span key={idx} className="text-[11px] text-slate-500 bg-slate-50 px-2 py-0.5 rounded border border-slate-100">
-                        {svc}
-                      </span>
-                    ))}
-                    {practice.keyServices.length > 3 && (
-                      <span className="text-[11px] text-[#CDB091] font-semibold">
-                        +{practice.keyServices.length - 3} more
-                      </span>
-                    )}
-                  </div>
+                {/* Roman Numeral & Classification Code */}
+                <div className="lg:col-span-3 flex items-baseline gap-4">
+                  <span className="font-title text-base font-bold text-[#875A1E] tracking-wider w-8 shrink-0">
+                    {romanNumerals[idx] || (idx + 1)}.
+                  </span>
+                  <span className="font-mono text-xs uppercase tracking-wider text-slate-500 font-semibold">
+                    {practice.subtitle}
+                  </span>
                 </div>
 
-                {/* Right Arrow Link with Gold Styling */}
-                <div className="shrink-0 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#CDB091] group-hover:text-[#283361] transition-colors self-end sm:self-center">
-                  <span className="hidden md:inline">View Scope</span>
-                  <div className="w-10 h-10 rounded-full border border-slate-200 group-hover:border-[#CDB091] group-hover:bg-[#CDB091]/10 flex items-center justify-center transition-all">
-                    <ArrowRight className="w-4 h-4 text-[#CDB091] group-hover:translate-x-1 transition-transform" />
+                {/* Practice Area Title & Scope Summary */}
+                <div className="lg:col-span-6 space-y-2">
+                  <h3 className="font-display text-2xl sm:text-3xl text-[#111625] group-hover:text-[#875A1E] transition-colors leading-snug">
+                    {practice.title}
+                  </h3>
+                  <p className="font-reading text-sm text-slate-600 leading-relaxed font-normal">
+                    {practice.shortDesc}
+                  </p>
+                </div>
+
+                {/* Primary Forums & Action Trigger */}
+                <div className="lg:col-span-3 flex items-center justify-between lg:justify-end gap-4 pt-2 lg:pt-0">
+                  <span className="font-sans text-[11px] font-medium text-slate-500 hidden sm:inline-block">
+                    {practice.courtRepresentation[0] || 'High Courts & Special Benches'}
+                  </span>
+                  <div className="w-9 h-9 border border-[#DDD4C5] group-hover:border-[#875A1E] group-hover:bg-[#875A1E] group-hover:text-white flex items-center justify-center text-[#111625] transition-all shrink-0">
+                    <ArrowUpRight className="w-4 h-4" />
                   </div>
                 </div>
 

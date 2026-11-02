@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
 import { 
-  Scale, 
   Menu, 
   X, 
-  Phone, 
-  Mail, 
   MapPin, 
+  Mail, 
+  Phone, 
   ChevronDown,
-  Clock,
-  ArrowRight,
-  Shield
+  ArrowRight
 } from 'lucide-react';
 import { FIRM_DETAILS, PRACTICE_AREAS } from '../data/firmData';
 
@@ -35,51 +32,48 @@ export const Navbar: React.FC<NavbarProps> = ({
   const [practiceDropdownOpen, setPracticeDropdownOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-white shadow-sm border-b border-slate-100 transition-all">
+    <header className="sticky top-0 z-40 w-full bg-[#FAF8F5] border-b border-[#E9E2D8] transition-colors">
       
-      {/* Top Utility Bar (Navy with Gold Accents) */}
-      <div className="bg-[#1c2445] text-slate-200 text-xs py-2 px-4 sm:px-6 lg:px-8 border-b border-white/10">
-        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      {/* Top Ledger Strip (Archival Gazette Style) */}
+      <div className="bg-[#111625] text-[#FAF8F5] text-[11px] py-1.5 px-4 sm:px-6 lg:px-8 border-b border-[#1E263D]">
+        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 font-sans">
           
-          <div className="flex items-center gap-6 text-[11.5px]">
-            <div className="flex items-center gap-1.5 font-medium text-slate-300">
-              <MapPin className="w-3.5 h-3.5 text-[#CDB091]" />
-              <span>Chamber No. 238, Patiala House Courts, New Delhi</span>
-            </div>
-            <div className="hidden md:flex items-center gap-1.5">
-              <Mail className="w-3.5 h-3.5 text-[#CDB091]" />
-              <a href={`mailto:${FIRM_DETAILS.email}`} className="hover:text-[#CDB091] transition-colors">
+          <div className="flex items-center gap-6">
+            <span className="flex items-center gap-1.5 text-slate-300">
+              <span className="text-[#B8863A] font-serif font-bold">Chamber No. 238</span>
+              <span className="text-slate-500">•</span>
+              <span>Patiala House Courts, New Delhi</span>
+            </span>
+            <span className="hidden md:flex items-center gap-1 text-slate-400">
+              <span>Registry:</span>
+              <a href={`mailto:${FIRM_DETAILS.email}`} className="text-[#B8863A] hover:underline">
                 {FIRM_DETAILS.email}
               </a>
-            </div>
-            <div className="hidden lg:flex items-center gap-1.5">
-              <Clock className="w-3.5 h-3.5 text-[#CDB091]" />
-              <span>Mon – Sat: 9:30 AM – 7:30 PM</span>
-            </div>
+            </span>
           </div>
 
-          {/* Accessibility Controls & Helpline */}
-          <div className="flex items-center gap-4 text-[11px]">
-            <div className="flex items-center gap-1 bg-white/5 px-2 py-0.5 rounded border border-white/15">
-              <span className="text-[10px] text-[#CDB091] font-semibold uppercase pr-1">Text:</span>
+          {/* Accessibility & Urgency Notice */}
+          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-1 bg-white/5 px-2 py-0.5 rounded border border-white/10 text-[10px]">
+              <span className="text-[#B8863A] uppercase tracking-wider font-semibold mr-1">Scale:</span>
               <button
                 onClick={() => onChangeTextSize('sm')}
-                className={`px-1.5 py-0.5 rounded hover:bg-white/20 transition-colors ${textSize === 'sm' ? 'font-bold text-[#CDB091] underline' : 'text-slate-300'}`}
-                aria-label="Decrease font size"
+                className={`px-1 rounded ${textSize === 'sm' ? 'text-[#B8863A] font-bold underline' : 'text-slate-400 hover:text-white'}`}
+                aria-label="Decrease text size"
               >
                 A-
               </button>
               <button
                 onClick={() => onChangeTextSize('md')}
-                className={`px-1.5 py-0.5 rounded hover:bg-white/20 transition-colors ${textSize === 'md' ? 'font-bold text-[#CDB091] underline' : 'text-slate-300'}`}
-                aria-label="Default font size"
+                className={`px-1 rounded ${textSize === 'md' ? 'text-[#B8863A] font-bold underline' : 'text-slate-400 hover:text-white'}`}
+                aria-label="Default text size"
               >
                 A
               </button>
               <button
                 onClick={() => onChangeTextSize('lg')}
-                className={`px-1.5 py-0.5 rounded hover:bg-white/20 transition-colors ${textSize === 'lg' ? 'font-bold text-[#CDB091] underline' : 'text-slate-300'}`}
-                aria-label="Increase font size"
+                className={`px-1 rounded ${textSize === 'lg' ? 'text-[#B8863A] font-bold underline' : 'text-slate-400 hover:text-white'}`}
+                aria-label="Increase text size"
               >
                 A+
               </button>
@@ -87,10 +81,10 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             <button
               onClick={onToggleHighContrast}
-              className="hidden sm:inline-flex items-center gap-1 px-2.5 py-0.5 rounded bg-white/5 hover:bg-white/15 border border-white/15 transition-colors cursor-pointer text-[11px] text-slate-300"
-              aria-label="Toggle high contrast mode"
+              className="hidden sm:inline-block px-2 py-0.5 text-[10px] text-slate-400 hover:text-white border border-white/10 rounded cursor-pointer"
+              aria-label="Toggle high contrast"
             >
-              <span>{isHighContrast ? 'Normal' : 'Contrast'}</span>
+              {isHighContrast ? 'Normal' : 'High Contrast'}
             </button>
 
             <a
@@ -99,43 +93,38 @@ export const Navbar: React.FC<NavbarProps> = ({
                 e.preventDefault();
                 onOpenConsultation();
               }}
-              className="font-semibold text-[#CDB091] hover:underline flex items-center gap-1.5"
+              className="text-[#B8863A] hover:text-[#D4AA6A] font-semibold text-[11px] uppercase tracking-wider flex items-center gap-1"
             >
-              <Phone className="w-3 h-3" />
-              <span>Urgent Legal Inquiry</span>
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#B8863A] animate-pulse" />
+              <span>Urgent Remand Briefing</span>
             </a>
           </div>
 
         </div>
       </div>
 
-      {/* Main Clean White Navbar (Directly styled like K&R Legal) */}
+      {/* Main Folio Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           
-          {/* Logo */}
-          <a href="#" className="flex items-center gap-3.5 group focus:outline-none">
-            <div className="w-11 h-11 rounded-lg bg-[#283361] flex items-center justify-center text-[#CDB091] shadow-md border border-[#CDB091]/30 group-hover:scale-105 transition-transform">
-              <Scale className="w-6 h-6" />
-            </div>
-            <div>
-              <span className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-[#283361] block leading-tight">
-                SYNERGY <span className="text-[#CDB091]">CHAMBERS</span>
-              </span>
-              <span className="text-[10px] tracking-[0.2em] uppercase text-slate-500 font-semibold block">
-                Advocates &amp; Solicitors
-              </span>
-            </div>
+          {/* Monumental Wordmark */}
+          <a href="#" className="flex items-baseline gap-3 group focus:outline-none">
+            <span className="font-title text-2xl sm:text-[26px] font-bold tracking-[0.08em] text-[#111625] block leading-none">
+              SYNERGY <span className="text-[#875A1E] font-normal">CHAMBERS</span>
+            </span>
+            <span className="hidden sm:inline-block text-[10px] font-sans font-semibold uppercase tracking-[0.25em] text-[#875A1E] pl-2 border-l border-[#DDD4C5]">
+              Advocates &amp; Solicitors
+            </span>
           </a>
 
-          {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-8 text-[14px] font-semibold text-slate-700">
-            <a href="#" className="text-[#283361] hover:text-[#CDB091] transition-colors">
-              Home
+          {/* Navigation Links (Editorial Small Caps) */}
+          <nav className="hidden lg:flex items-center gap-7 text-[13px] font-sans font-semibold uppercase tracking-[0.12em] text-[#111625]/80">
+            <a href="#" className="text-[#875A1E] transition-colors">
+              Index
             </a>
             
-            <a href="#about" className="hover:text-[#283361] transition-colors">
-              About Us
+            <a href="#about" className="hover:text-[#875A1E] transition-colors">
+              Institutional Profile
             </a>
 
             {/* Practice Areas Dropdown */}
@@ -143,83 +132,77 @@ export const Navbar: React.FC<NavbarProps> = ({
               <button
                 onClick={() => setPracticeDropdownOpen(!practiceDropdownOpen)}
                 onMouseEnter={() => setPracticeDropdownOpen(true)}
-                className="flex items-center gap-1 hover:text-[#283361] transition-colors cursor-pointer py-2"
+                className="flex items-center gap-1 hover:text-[#875A1E] transition-colors cursor-pointer py-2 uppercase tracking-[0.12em]"
                 aria-expanded={practiceDropdownOpen}
               >
-                <span>Practice Areas</span>
-                <ChevronDown className="w-4 h-4 text-slate-400 group-hover:text-[#283361] transition-transform group-hover:rotate-180" />
+                <span>Practice Remit</span>
+                <ChevronDown className="w-3.5 h-3.5 text-[#875A1E] transition-transform group-hover:rotate-180" />
               </button>
 
-              {/* Dropdown Menu */}
               <div 
                 onMouseLeave={() => setPracticeDropdownOpen(false)}
-                className={`absolute top-full left-0 w-80 bg-white border border-slate-200 rounded-xl shadow-xl py-3 px-2 z-50 transition-all duration-200 ${
+                className={`absolute top-full left-0 w-84 bg-[#FAF8F5] border border-[#DDD4C5] rounded-none shadow-docket py-3 px-2 z-50 transition-all duration-150 ${
                   practiceDropdownOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2 pointer-events-none'
                 }`}
               >
-                <div className="text-[10px] uppercase font-bold tracking-wider text-[#CDB091] px-3 py-1">
-                  Core Legal Domains
+                <div className="text-[10px] uppercase font-sans font-bold tracking-[0.2em] text-[#875A1E] px-3 py-1.5 border-b border-[#E9E2D8] mb-1">
+                  Courtroom Practice Domains
                 </div>
-                {PRACTICE_AREAS.slice(0, 6).map((practice) => (
+                {PRACTICE_AREAS.slice(0, 6).map((practice, idx) => (
                   <button
                     key={practice.id}
                     onClick={() => {
                       onSelectPractice(practice.id);
                       setPracticeDropdownOpen(false);
                     }}
-                    className="w-full text-left px-3 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50 hover:text-[#283361] rounded-lg transition-colors flex items-center justify-between"
+                    className="w-full text-left px-3 py-2 text-xs font-sans font-medium text-[#111625] hover:bg-[#F4EFEB] hover:text-[#875A1E] transition-colors flex items-center justify-between"
                   >
                     <span>{practice.title}</span>
-                    <ArrowRight className="w-3 h-3 text-[#CDB091]" />
+                    <span className="font-mono text-[10px] text-[#A89982]">0{idx + 1}</span>
                   </button>
                 ))}
-                <div className="pt-2 mt-2 border-t border-slate-100 px-3">
+                <div className="pt-2 mt-2 border-t border-[#E9E2D8] px-3">
                   <a
                     href="#practice-areas"
                     onClick={() => setPracticeDropdownOpen(false)}
-                    className="text-xs font-bold text-[#283361] hover:text-[#CDB091] flex items-center gap-1 transition-colors"
+                    className="text-[11px] font-sans font-bold uppercase tracking-wider text-[#875A1E] hover:underline flex items-center gap-1"
                   >
-                    <span>View All Practice Domains</span>
+                    <span>View All 9 Practice Domains</span>
                     <ArrowRight className="w-3 h-3" />
                   </a>
                 </div>
               </div>
             </div>
 
-            <a href="#industries" className="hover:text-[#283361] transition-colors">
-              Industries Served
+            <a href="#industries" className="hover:text-[#875A1E] transition-colors">
+              Regulated Sectors
             </a>
 
-            <a href="#why-us" className="hover:text-[#283361] transition-colors">
-              Why Us
+            <a href="#team" className="hover:text-[#875A1E] transition-colors">
+              Counsel Roster
             </a>
 
-            <a href="#team" className="hover:text-[#283361] transition-colors">
-              Team
-            </a>
-
-            <a href="#contact" className="hover:text-[#283361] transition-colors">
-              Contact
+            <a href="#why-us" className="hover:text-[#875A1E] transition-colors">
+              Chamber Principles
             </a>
           </nav>
 
-          {/* Desktop Right CTA Button (K&R Legal Style: "Consult Us") */}
+          {/* Action Button: Physical Brass Aesthetic (No Neon, No Cliché Pill) */}
           <div className="hidden lg:flex items-center gap-4">
             <button
               onClick={onOpenConsultation}
-              className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-[#283361] hover:bg-[#1c2445] text-[#CDB091] hover:text-white border border-[#CDB091]/50 text-xs font-bold uppercase tracking-wider transition-all shadow-md hover:shadow-lg cursor-pointer"
+              className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#111625] text-[#FAF8F5] border border-[#875A1E] text-xs font-sans font-bold uppercase tracking-[0.14em] hover:bg-[#875A1E] hover:text-[#FAF8F5] transition-all cursor-pointer shadow-xs active:translate-y-0.5"
             >
-              <span>Consult Us</span>
-              <ArrowRight className="w-3.5 h-3.5 text-[#CDB091]" />
+              <span>Schedule Consultation</span>
             </button>
           </div>
 
-          {/* Mobile Hamburger Button */}
+          {/* Mobile Menu Toggle */}
           <div className="flex lg:hidden items-center gap-2">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-lg text-slate-700 hover:text-[#283361] hover:bg-slate-100 transition-colors"
-              aria-label="Toggle navigation menu"
+              className="p-2 text-[#111625] hover:text-[#875A1E] transition-colors"
+              aria-label="Toggle navigation"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -230,67 +213,66 @@ export const Navbar: React.FC<NavbarProps> = ({
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-t border-slate-100 px-4 pt-3 pb-6 space-y-2 shadow-xl animate-in slide-in-from-top-2">
+        <div className="lg:hidden bg-[#FAF8F5] border-t border-[#DDD4C5] px-6 py-6 space-y-4 shadow-docket font-sans">
           <a
             href="#"
             onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-800 hover:bg-slate-50 hover:text-[#283361]"
+            className="block text-sm font-semibold uppercase tracking-wider text-[#111625] hover:text-[#875A1E]"
           >
-            Home
+            Index
           </a>
           <a
             href="#about"
             onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-800 hover:bg-slate-50 hover:text-[#283361]"
+            className="block text-sm font-semibold uppercase tracking-wider text-[#111625] hover:text-[#875A1E]"
           >
-            About Us
+            Institutional Profile
           </a>
           <a
             href="#practice-areas"
             onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-800 hover:bg-slate-50 hover:text-[#283361]"
+            className="block text-sm font-semibold uppercase tracking-wider text-[#111625] hover:text-[#875A1E]"
           >
-            Practice Areas
+            Practice Remit
           </a>
           <a
             href="#industries"
             onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-800 hover:bg-slate-50 hover:text-[#283361]"
+            className="block text-sm font-semibold uppercase tracking-wider text-[#111625] hover:text-[#875A1E]"
           >
-            Industries Served
-          </a>
-          <a
-            href="#why-us"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-800 hover:bg-slate-50 hover:text-[#283361]"
-          >
-            Why Synergy Chambers
+            Regulated Sectors
           </a>
           <a
             href="#team"
             onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-800 hover:bg-slate-50 hover:text-[#283361]"
+            className="block text-sm font-semibold uppercase tracking-wider text-[#111625] hover:text-[#875A1E]"
           >
-            Our Team
+            Counsel Roster
+          </a>
+          <a
+            href="#why-us"
+            onClick={() => setMobileMenuOpen(false)}
+            className="block text-sm font-semibold uppercase tracking-wider text-[#111625] hover:text-[#875A1E]"
+          >
+            Chamber Principles
           </a>
           <a
             href="#contact"
             onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-800 hover:bg-slate-50 hover:text-[#283361]"
+            className="block text-sm font-semibold uppercase tracking-wider text-[#111625] hover:text-[#875A1E]"
           >
-            Contact Us
+            Case Registry &amp; Contact
           </a>
 
-          <div className="pt-3 border-t border-slate-100">
+          <div className="pt-3 border-t border-[#DDD4C5]">
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
                 onOpenConsultation();
               }}
-              className="w-full flex items-center justify-center gap-2 py-3 rounded-full bg-[#283361] text-[#CDB091] font-bold text-xs uppercase tracking-wider shadow-md"
+              className="w-full py-3 bg-[#111625] text-[#FAF8F5] border border-[#875A1E] font-bold text-xs uppercase tracking-[0.14em]"
             >
-              <span>Consult Us</span>
-              <ArrowRight className="w-4 h-4 text-[#CDB091]" />
+              Schedule Consultation
             </button>
           </div>
         </div>

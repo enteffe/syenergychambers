@@ -1,112 +1,102 @@
 import React from 'react';
-import { 
-  Building2, 
-  HardHat, 
-  Radio, 
-  Home, 
-  Cpu, 
-  Pill, 
-  Check 
-} from 'lucide-react';
+import { ArrowRight, Landmark } from 'lucide-react';
 
 export const IndustriesSection: React.FC = () => {
-  const industries = [
+  const sectors = [
     {
-      id: 'banking',
-      title: 'Banking & Financial Services',
-      desc: 'Advisory and trial defence under PMLA, IBC debt restructuring, SFIO corporate investigations, and recovery proceedings.',
-      highlights: ['PMLA & Enforcement Directorate', 'IBC & NCLT Restructuring', 'SFIO Corporate Trials'],
-      icon: Building2
+      code: 'SEC-01',
+      name: 'Banking & Financial Services',
+      tribunals: 'ED • SFIO • NCLT • DRT',
+      focus: 'PMLA inquiries, IBC corporate insolvency, Section 138 NI Act, forensic audit defense, and director liability litigation.'
     },
     {
-      id: 'infrastructure',
-      title: 'Infrastructure & Construction',
-      desc: 'High-value commercial arbitration, EPC contractual disputes, and statutory tender litigation before appellate benches.',
-      highlights: ['Domestic & Int. Arbitration', 'EPC Contractual Claims', 'Public Procurement Writs'],
-      icon: HardHat
+      code: 'SEC-02',
+      name: 'Infrastructure & Construction',
+      tribunals: 'Arbitral Tribunals • High Court • Supreme Court',
+      focus: 'High-value commercial arbitration, EPC contractual disputes, delay and liquidated damages claims, and public procurement writ petitions.'
     },
     {
-      id: 'telecom',
-      title: 'Telecommunications & Media',
-      desc: 'Regulatory litigation, spectrum and licensing disputes, and specialized representation before TDSAT and High Courts.',
-      highlights: ['TDSAT Appellate Advocacy', 'Licensing & Spectrum Issues', 'Intermediary Liability'],
-      icon: Radio
+      code: 'SEC-03',
+      name: 'Telecommunications & Media',
+      tribunals: 'TDSAT • High Court of Delhi',
+      focus: 'Appellate representation before TDSAT, spectrum licensing disputes, digital intermediary liability, and contentious broadcasting litigation.'
     },
     {
-      id: 'real-estate',
-      title: 'Real Estate & Urban Dev',
-      desc: 'RERA compliance, builder-buyer litigation, land acquisition disputes, and title trial management across Delhi NCR.',
-      highlights: ['RERA Tribunal & Appellate', 'Commercial Title Litigations', 'Land Acquisition Defense'],
-      icon: Home
+      code: 'SEC-04',
+      name: 'Real Estate & Urban Development',
+      tribunals: 'RERA Authority • REAT • NCLT',
+      focus: 'Commercial title trials, RERA regulatory adjudication, builder-buyer group litigation, land acquisition compensation, and developer defense.'
     },
     {
-      id: 'tech',
-      title: 'Technology & Digital Platforms',
-      desc: 'Cyber crime investigations, data protection, digital intermediary liabilities, and intellectual property disputes.',
-      highlights: ['Cyber Crime Inquiries', 'Intermediary Safe Harbor', 'Commercial IP Protection'],
-      icon: Cpu
+      code: 'SEC-05',
+      name: 'Technology & Digital Commerce',
+      tribunals: 'Special Cyber Courts • Commercial Courts',
+      focus: 'Cyber crime investigations, intermediary safe-harbor compliance, data privacy litigation, and commercial intellectual property enforcement.'
     },
     {
-      id: 'pharma',
-      title: 'Pharmaceuticals & Healthcare',
-      desc: 'Drugs & Cosmetics Act inquiries, regulatory compliance actions, and licensing appeals across state and central authorities.',
-      highlights: ['Drugs & Cosmetics Trials', 'Regulatory Inquiries', 'Clinical Licensing Appeals'],
-      icon: Pill
-    },
+      code: 'SEC-06',
+      name: 'Pharmaceuticals & Healthcare',
+      tribunals: 'State Licensing Authorities • Sessions Courts',
+      focus: 'Drugs & Cosmetics Act inquiries, regulatory product seizures, prosecution defense, and clinical licensing challenges.'
+    }
   ];
 
   return (
-    <section id="industries" className="py-20 lg:py-28 bg-[#fbfbfb] border-b border-slate-100 overflow-hidden">
+    <section id="industries" className="bg-[#FAF8F5] py-20 lg:py-28 border-b border-[#DDD4C5]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <p className="text-[#CDB091] font-extrabold text-xs sm:text-sm uppercase tracking-[2px] mb-2">
-            Sectoral Representation
-          </p>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] font-normal text-[#283361] tracking-tight">
-            Industries Served
-          </h2>
-          <p className="text-base text-slate-600 mt-3 font-normal leading-relaxed">
-            Advising corporate enterprises and leaders across heavily regulated and high-risk commercial sectors.
-          </p>
-        </div>
+        {/* Asymmetrical Layout: Left Briefing + Right Regulatory Ledger */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          
+          {/* Left Column: Sectoral Authority Statement */}
+          <div className="lg:col-span-5 space-y-6 lg:sticky lg:top-28">
+            <span className="font-title text-xs tracking-[0.25em] text-[#875A1E] uppercase block">
+              Regulatory Scope // Sector Representation
+            </span>
 
-        {/* 6-Card Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {industries.map((item) => {
-            const Icon = item.icon;
-            return (
-              <div
-                key={item.id}
-                className="bg-white border border-slate-200/90 hover:border-[#283361] rounded-[15px] p-7 sm:p-8 shadow-[0_4px_15px_rgba(0,0,0,0.02)] hover:shadow-[0_12px_30px_rgba(40,51,97,0.1)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group"
-              >
-                <div>
-                  <div className="w-12 h-12 rounded-xl bg-[#f5f7fc] border border-slate-100 flex items-center justify-center text-[#283361] group-hover:text-[#CDB091] group-hover:bg-[#283361] transition-all mb-5">
-                    <Icon className="w-6 h-6" />
+            <h2 className="font-display text-4xl sm:text-5xl font-normal text-[#111625] leading-tight text-balance">
+              Advising enterprises facing investigative &amp; commercial exposure.
+            </h2>
+
+            <p className="font-reading text-base text-slate-700 leading-relaxed font-normal">
+              Heavily regulated industries operate under strict statutory scrutiny. Our practice bridges preventive compliance advisory with proactive trial advocacy before regulatory adjudicators, tribunals, and superior courts.
+            </p>
+
+            <div className="p-5 border border-[#DDD4C5] bg-[#F4EFEB] font-sans text-xs space-y-2">
+              <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#875A1E] block">
+                Tribunal Corridors
+              </span>
+              <p className="text-slate-700 leading-relaxed font-normal">
+                Direct appearance counsel before NCLT, NCLAT, TDSAT, RERA, and PMLA Adjudicating Authorities in New Delhi and Chandigarh.
+              </p>
+            </div>
+          </div>
+
+          {/* Right Column: Regulatory Index Ledger (No generic card grid!) */}
+          <div className="lg:col-span-7 divide-y divide-[#DDD4C5] border-t border-b border-[#DDD4C5]">
+            {sectors.map((sector) => (
+              <div key={sector.code} className="py-6 hover:bg-[#F4EFEB] transition-colors px-3 -mx-3">
+                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 mb-2">
+                  <div className="flex items-baseline gap-3">
+                    <span className="font-mono text-xs font-bold text-[#875A1E]">
+                      {sector.code}
+                    </span>
+                    <h3 className="font-display text-xl sm:text-2xl font-bold text-[#111625]">
+                      {sector.name}
+                    </h3>
                   </div>
-
-                  <h3 className="font-serif text-lg sm:text-xl font-bold text-[#283361] uppercase tracking-[1px] mb-2.5">
-                    {item.title}
-                  </h3>
-
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal mb-5">
-                    {item.desc}
-                  </p>
+                  <span className="font-sans text-[11px] font-semibold text-slate-500 uppercase tracking-wider">
+                    {sector.tribunals}
+                  </span>
                 </div>
-
-                {/* Sub-bullets for quick scannability */}
-                <div className="pt-4 border-t border-slate-100 space-y-1.5">
-                  {item.highlights.map((hl, idx) => (
-                    <div key={idx} className="flex items-center gap-2 text-xs text-slate-500">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#CDB091] shrink-0" />
-                      <span>{hl}</span>
-                    </div>
-                  ))}
-                </div>
+                
+                <p className="font-reading text-sm text-slate-600 leading-relaxed pl-0 sm:pl-16">
+                  {sector.focus}
+                </p>
               </div>
-            );
-          })}
+            ))}
+          </div>
+
         </div>
 
       </div>

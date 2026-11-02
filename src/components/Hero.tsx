@@ -1,13 +1,5 @@
 import React from 'react';
-import { 
-  Scale, 
-  ArrowRight, 
-  CheckCircle2, 
-  ShieldCheck, 
-  Lock,
-  Landmark,
-  FileCheck
-} from 'lucide-react';
+import { ArrowRight, Lock, MapPin, Scale, Shield, Landmark } from 'lucide-react';
 import { FIRM_DETAILS } from '../data/firmData';
 
 interface HeroProps {
@@ -16,81 +8,144 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onOpenConsultation }) => {
   return (
-    <section id="hero" className="relative min-h-[620px] lg:min-h-[680px] flex items-center justify-center bg-[#151c38] text-white overflow-hidden py-24 lg:py-32">
+    <section id="hero" className="relative bg-[#111625] text-[#FAF8F5] pt-16 pb-20 lg:pt-24 lg:pb-32 overflow-hidden border-b border-[#2C3652]">
       
-      {/* Background Architectural & Courtroom Imagery with Layered Depth */}
+      {/* Background Architectural Etching / Fine Grid (Archival Legal Texture) */}
       <div 
-        className="absolute inset-0 z-0 bg-cover bg-center opacity-20 mix-blend-luminosity scale-105"
+        className="absolute inset-0 z-0 opacity-15 mix-blend-luminosity scale-105 pointer-events-none bg-cover bg-center"
         style={{
           backgroundImage: `url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=1920')`
         }}
       />
+      
+      {/* Editorial Ink Wash */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-r from-[#111625] via-[#111625]/95 to-[#171E30]/90 pointer-events-none" />
 
-      {/* Layered Gradient Overlay for Signature Trust Navy */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-b from-[#101528]/95 via-[#1a2345]/90 to-[#222b54]/95" />
+      {/* Hairline Grid Accent */}
+      <div className="absolute inset-x-0 bottom-0 h-px bg-[#2C3652]" />
 
-      {/* Subtle Grid / Line Pattern */}
-      <div 
-        className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none"
-        style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, white 1px, transparent 0)`,
-          backgroundSize: '40px 40px'
-        }}
-      />
-
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
-        
-        {/* Authoritative Gold Eyebrow Kicker */}
-        <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/5 border border-[#CDB091]/35 text-[#CDB091] text-xs font-semibold uppercase tracking-[0.18em] backdrop-blur-sm shadow-sm">
-          <Scale className="w-3.5 h-3.5 text-[#CDB091]" />
-          <span>Chamber No. 238 • Patiala House Courts, New Delhi</span>
-        </div>
-
-        {/* Master Display Headline (Marcellus Serif) */}
-        <h1 className="font-serif text-4xl sm:text-5xl lg:text-[58px] font-normal tracking-tight text-white leading-[1.16] max-w-4xl mx-auto text-balance">
-          Trusted Counsel in High-Stakes Criminal &amp; Commercial Litigation
-        </h1>
-
-        {/* Refined, Concise Narrative Subtitle */}
-        <p className="text-base sm:text-lg lg:text-[19px] text-slate-200/90 max-w-3xl mx-auto leading-relaxed font-normal">
-          Operating from Chamber 238, Patiala House Courts, with active regional corridors across Chandigarh and Haryana. We advise corporations, business leaders, and individuals facing regulatory investigations, criminal trials, and appellate disputes before the Supreme Court, High Courts, and Special Tribunals.
-        </p>
-
-        {/* Action Buttons */}
-        <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
-          <button
-            onClick={onOpenConsultation}
-            className="px-8 py-4 rounded-md bg-[#CDB091] hover:bg-[#b89874] text-[#12172d] text-xs font-bold uppercase tracking-wider transition-all shadow-lg hover:shadow-xl flex items-center gap-2.5 cursor-pointer group font-sans border border-[#e2caa8]"
-          >
-            <Lock className="w-3.5 h-3.5 text-[#12172d]/80" />
-            <span>Schedule a Consultation</span>
-            <ArrowRight className="w-4 h-4 text-[#12172d] group-hover:translate-x-1 transition-transform" />
-          </button>
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
           
-          <a
-            href="#practice-areas"
-            className="px-8 py-4 rounded-md bg-white/5 hover:bg-white/10 text-white border border-white/20 hover:border-[#CDB091]/60 text-xs font-bold uppercase tracking-wider transition-all cursor-pointer font-sans backdrop-blur-xs"
-          >
-            Explore Practice Areas
-          </a>
-        </div>
+          {/* Left Column: Monumental Legal Statement (Visual Anchor) */}
+          <div className="lg:col-span-7 space-y-8">
+            
+            <div className="inline-block border-b border-[#875A1E] pb-1">
+              <span className="font-title text-xs tracking-[0.22em] text-[#C79C5A] uppercase">
+                Chamber No. 238 • Patiala House Courts Complex
+              </span>
+            </div>
 
-        {/* Institutional Trust Indicators */}
-        <div className="pt-8 border-t border-white/10 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs text-slate-300">
-          <div className="flex items-center gap-2">
-            <CheckCircle2 className="w-4 h-4 text-[#CDB091] shrink-0" />
-            <span className="font-medium">Direct Arguing Counsel</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <CheckCircle2 className="w-4 h-4 text-[#CDB091] shrink-0" />
-            <span className="font-medium">Supreme Court &amp; High Court Benches</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <CheckCircle2 className="w-4 h-4 text-[#CDB091] shrink-0" />
-            <span className="font-medium">Confidential Under Sec. 126 Evidence Act</span>
-          </div>
-        </div>
+            <h1 className="font-display text-4xl sm:text-6xl lg:text-[68px] font-normal tracking-tight text-[#FAF8F5] leading-[1.08] text-balance">
+              Trial rigor in high-stakes criminal &amp; commercial litigation.
+            </h1>
 
+            <p className="font-reading text-lg sm:text-xl text-slate-300 max-w-2xl leading-relaxed">
+              Led by seasoned courtroom advocates with extensive prosecution background across the Enforcement Directorate (ED), NCB, and central agencies. We advise corporations, business leaders, and individuals facing regulatory investigations, criminal trials, and appellate disputes before the Supreme Court and High Courts.
+            </p>
+
+            {/* Action Group */}
+            <div className="flex flex-wrap items-center gap-5 pt-2 font-sans">
+              <button
+                onClick={onOpenConsultation}
+                className="px-8 py-4 bg-[#A3702C] hover:bg-[#875A1E] text-[#FAF8F5] text-xs font-bold uppercase tracking-[0.16em] transition-all flex items-center gap-3 cursor-pointer shadow-sm active:translate-y-0.5"
+              >
+                <span>Schedule Case Briefing</span>
+                <ArrowRight className="w-4 h-4 text-[#FAF8F5]" />
+              </button>
+              
+              <a
+                href="#practice-areas"
+                className="px-8 py-4 bg-transparent hover:bg-white/5 text-[#FAF8F5] border border-[#DDD4C5]/30 hover:border-[#C79C5A] text-xs font-bold uppercase tracking-[0.16em] transition-all"
+              >
+                Practice Remit
+              </a>
+            </div>
+
+            {/* Sub-text Citation */}
+            <div className="pt-4 border-t border-[#1F263D] flex items-center gap-3 text-xs text-slate-400 font-sans">
+              <span className="w-2 h-2 rounded-full bg-[#A3702C]" />
+              <span>Direct Arguing Counsel — Direct Partner Engagement Throughout Trial</span>
+            </div>
+
+          </div>
+
+          {/* Right Column: Physical Chamber Docket Card (Asymmetric Architectural Counterpoint) */}
+          <div className="lg:col-span-5">
+            <div className="bg-[#FAF8F5] text-[#111625] p-8 sm:p-10 border border-[#DDD4C5] shadow-docket relative">
+              
+              {/* Docket Header */}
+              <div className="flex items-center justify-between pb-6 border-b border-[#DDD4C5] mb-6">
+                <div>
+                  <span className="font-title text-xs tracking-[0.2em] text-[#875A1E] uppercase block mb-1">
+                    Judicial Registry Docket
+                  </span>
+                  <span className="font-mono text-xs font-bold text-[#111625] tracking-widest block">
+                    NO. SC/238-PHC/2026
+                  </span>
+                </div>
+                <div className="w-10 h-10 border border-[#875A1E] flex items-center justify-center text-[#875A1E]">
+                  <Scale className="w-5 h-5" />
+                </div>
+              </div>
+
+              {/* Ledger Entries */}
+              <div className="space-y-5 text-xs font-sans">
+                
+                <div>
+                  <span className="text-[10px] uppercase font-bold tracking-[0.15em] text-slate-500 block mb-1">
+                    Primary Chamber Seat
+                  </span>
+                  <p className="font-serif text-base font-bold text-[#111625] leading-snug">
+                    Chamber No. 238, Patiala House Courts
+                  </p>
+                  <span className="text-slate-600 block mt-0.5">New Delhi – 110001 (Opp. NGMA)</span>
+                </div>
+
+                <div className="grid grid-cols-2 gap-4 pt-3 border-t border-[#E9E2D8]">
+                  <div>
+                    <span className="text-[10px] uppercase font-bold tracking-[0.15em] text-slate-500 block mb-1">
+                      Arguing Experience
+                    </span>
+                    <span className="font-serif text-sm font-bold text-[#111625] block">
+                      Supreme Court &amp; High Courts
+                    </span>
+                  </div>
+                  <div>
+                    <span className="text-[10px] uppercase font-bold tracking-[0.15em] text-slate-500 block mb-1">
+                      Agency Pedigree
+                    </span>
+                    <span className="font-serif text-sm font-bold text-[#111625] block">
+                      Former Special Prosecutors
+                    </span>
+                  </div>
+                </div>
+
+                <div className="pt-3 border-t border-[#E9E2D8]">
+                  <span className="text-[10px] uppercase font-bold tracking-[0.15em] text-slate-500 block mb-1">
+                    Statutory Privilege Framework
+                  </span>
+                  <p className="text-xs text-slate-700 leading-relaxed font-normal">
+                    Client communication protected under Sections 126–129 of the Indian Evidence Act, 1872. No public disclosure of matter specifics.
+                  </p>
+                </div>
+
+                <div className="p-3.5 bg-[#F4EFEB] border border-[#DDD4C5] flex items-center justify-between mt-2">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse" />
+                    <span className="text-[11px] font-bold text-[#111625] uppercase tracking-wider">
+                      Emergency Remand / Bail Desk
+                    </span>
+                  </div>
+                  <span className="text-[11px] font-bold text-[#875A1E]">24/7 Available</span>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+        </div>
       </div>
 
     </section>
